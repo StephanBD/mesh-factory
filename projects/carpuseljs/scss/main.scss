@@ -1,0 +1,128 @@
+@use "sass:math";
+// @import "0_reset/minireset.scss";
+
+@import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+// @import "variables.scss";
+// //==========================================================*/
+@import "settings";
+@import "layout";
+// @import "components";
+// @import "utilities";
+// ------------------------
+// @import "utilities/border";
+@import "utilities/margin-padding";
+// @import "utilities/utilities";
+// @import "utilities/filter";
+// @import "utilities/images";
+// @import "utilities/modal";
+// @import "utilities/shadow";
+// @import "utilities/shapes";
+// @import "utilities/transform";
+@import "utilities/width-height";
+@import "utilities/background-colors";
+@import "utilities/typography";
+// @import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+
+.slide {
+  position: relative;
+  left: 10%;
+  top: 30%;
+  width: 80%;
+  height: 200px;
+  overflow: hidden;
+  &-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    pointer-events: none;
+    transition: 0s ease-in;
+  }
+  // ----
+  &-img {
+    height: 100%;
+    // background: ;
+    text-align: center;
+    padding: 3rem;
+  }
+  // &:hover {
+  //   cursor: grabbing;
+  // }
+}
+
+.view {
+  width: 300px;
+  height: 600px;
+  overflow: auto;
+  background: #eeeeee;
+}
+
+.result {
+  height: 100px;
+  background: #fff;
+  margin: 8px;
+}
+
+.carousel-holder {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.carousel-item {
+  height: 200px;
+  width: 200px;
+  flex-shrink: 0;
+  background: #4d8df1;
+  margin-left: 8px;
+}
+.carousel-item:nth-child(2n) {
+  background: red;
+}
+// ------------------------------
+.slide {
+  &_bg {
+    position: relative;
+    // width: 1000px;
+    height: 400px;
+    overflow: hidden;
+  }
+  &_cards {
+    display: grid;
+    grid-template-columns: repeat(6, 300px);
+    gap: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  &_card {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+  &_content {
+    h1 {
+      margin: 0.5rem 0;
+    }
+    color: #343434;
+    padding: 1rem;
+    img {
+      width: 100%;
+    }
+  }
+}

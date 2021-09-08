@@ -1,0 +1,13 @@
+@use "sass:math";
+// @import "0_reset/minireset.scss";
+
+@import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+@import "variables.scss";
+// //==========================================================*/
+@import "settings";
+@import "layout";
+@import "components";
+@import "utilities";
+@import "debug";

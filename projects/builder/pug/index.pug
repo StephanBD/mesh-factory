@@ -1,0 +1,48 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	//- link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+block content
+	h1 builder
+	button#btn-copy.bg-green-light-t btn copy
+
+
+	.select-me
+		p hola 
+		.card.second nada
+
+
+	textarea#copy.textarea(name="", cols="30", rows="10" class="b b-red") 
+
+
+	.menu-context
+		.menu-body 
+			p classes
+			p#menu-classes zzzzzs
+			
+		.menu-body
+			p styles
+			.input-group
+				//- input#border-radius(type="range", name="" , min="0", value="1px").input-control
+				input#border-radius(type="number", name="" , min="0", value="1").input-control
+				select#border-radius-unit(name="").input-control 
+					option(value="px") px 
+					option(value="rem") rem 
+					option(value="em") em 
+					option(value="%") % 
+		button.menu-finish Save
+		
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

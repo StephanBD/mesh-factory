@@ -1,0 +1,299 @@
+@use "sass:math";
+
+@import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+@import "variables.scss";
+// //==========================================================*/
+@import "0_reset/minireset.scss";
+@import "settings";
+@import "layout";
+@import "components";
+@import "utilities";
+// ------------------------
+// @import "utilities/border";
+// @import "utilities/margin-padding";
+// @import "utilities/utilities";
+// @import "utilities/filter";
+// @import "utilities/images";
+// @import "utilities/modal";
+// @import "utilities/shadow";
+// @import "utilities/shapes";
+// @import "utilities/transform";
+// @import "utilities/width-height";
+// @import "utilities/background-colors";
+// @import "utilities/typography";
+// @import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+
+//-----------------------------------------------------//
+.contenedor {
+  height: 800vh;
+  text-align: center;
+  overflow: hidden;
+  // @include prop(bg dark);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    350deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  &__animacion {
+    @include prop(
+      position relative,
+      height 785vh,
+      display flex,
+      align-items center
+    );
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.nave {
+  position: absolute;
+  top: 100px;
+  width: 300px;
+  height: 300px;
+  transform: rotate(180deg);
+}
+
+.planeta {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  &1 {
+    opacity: 0;
+    top: 100vh;
+    right: 15%;
+  }
+  &2 {
+    opacity: 0;
+    top: 100vh;
+    left: 10%;
+  }
+  &3 {
+    opacity: 0;
+    top: 0;
+    width: 400px;
+    height: 400px;
+    right: -100vh;
+  }
+  &4 {
+    opacity: 0;
+    top: 5vh;
+    width: 350px;
+    height: 350px;
+    left: -100vh;
+  }
+}
+
+.new-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-modal_1000;
+  backdrop-filter: blur(8px);
+  // transform: translate(-50%, -50%);
+  // top: 50%;
+  // left: 50%;
+  @include before() {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 63, 0.5);
+    transition: opacity 0.3s;
+    opacity: 0;
+    // z-index: 0;
+  }
+  & > * {
+    z-index: 1;
+  }
+}
+
+// --------------------------
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: #000;
+  #bg {
+    z-index: -1;
+  }
+  #man {
+    transform-origin: bottom;
+  }
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  & #text {
+    position: relative;
+    color: #fff;
+    font-size: 10vw;
+    // z-index: 10;
+  }
+  @include before(absolute) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #fff, transparent);
+    z-index: 100;
+  }
+}
+
+// ------------------------
+
+// .menubar {
+//   $menubar: &;
+//   overflow: hidden;
+//   // transition: width 0.5s;
+//   height: 100vh;
+//   width: fit-content;
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   will-change: width;
+
+//   &-item {
+//     overflow: hidden;
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &-text {
+//     // display: none;
+//     opacity: 0;
+//     transition: opacity 0.3s 0.2s, width 0.5s cubic-bezier(0.6, -0.9, 0.5, 1),
+//       margin-left 0.3s 0.2s;
+//     width: 0;
+//     display: inline-block;
+//     margin-left: 0;
+//     will-change: width, opacity, margin-left;
+//     // margin-left: $margin;
+//     // transition-timing-function: cubic-bezier(0.6, -0.9, 0.5, 1);
+//   }
+
+//   &-tooltip {
+//     position: absolute;
+//     top: 25%;
+//     left: 100%;
+//   }
+
+//   &.active {
+//     // width: 300px;
+//     & .#{menubar}-text {
+//       margin-left: $margin;
+//       width: 100px;
+//       opacity: 1;
+//     }
+//     & .#{menubar}-item {
+//     }
+//   }
+// }
+// ------------------------
+
+.menubar {
+  $menubar: &;
+  // overflow: hidden;
+  // transition: width 0.5s;
+  height: 100vh;
+  width: fit-content;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0rem;
+  min-width: fit-content;
+  will-change: width;
+  transition: width 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.2);
+  // box-sizing: content-box;
+  &-tooltip {
+    // height: 90%;
+    overflow: hidden;
+    position: absolute;
+    top: 0%;
+    left: 120%;
+    background: inherit;
+    color: inherit;
+    transform: translateY(-50%);
+    // padding: $padding;
+    // display: none;
+    line-height: 1.8;
+    transition: top 0.3s, opacity 0.4s;
+    will-change: top, opacity;
+    // height: 0;
+    display: inline-block;
+    pointer-events: none;
+    @include px-(Div($padding, 2));
+    opacity: 0;
+    font-size: $small;
+  }
+
+  &-item {
+    // overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &:hover .#{menubar}-tooltip {
+      top: 50%;
+      opacity: 1;
+      // height: 90%;
+      // display: inline-block;
+    }
+  }
+
+  &-text,
+  & input {
+    // display: none;
+    opacity: 0;
+    transition: opacity 0.4s, margin-left 0.3s 0.2s;
+    width: 0;
+    display: inline-block;
+    margin-left: 0;
+    will-change: width, opacity, margin-left;
+    pointer-events: none;
+    overflow: hidden;
+    // margin-left: $margin;
+    // transition-timing-function: cubic-bezier(0.6, -0.9, 0.5, 1);
+    @include flex-12(auto);
+  }
+  & input {
+    pointer-events: all;
+  }
+
+  &.active {
+    width: 200px;
+    & .#{menubar}-text {
+      margin-left: $margin;
+      // width: 100%;
+      opacity: 1;
+      // animation: width 0.5s ;
+    }
+    & .#{menubar}-tooltip {
+      display: none;
+    }
+  }
+}
+
+// @keyframes width {
+//   0% {
+//     width: 0;
+//   }
+//   100% {
+//     width: 0;
+//   }
+// }

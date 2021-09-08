@@ -1,0 +1,43 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+//--------------------------------------
+
+block content 
+	.bg-black.menubar.p.t-light.t-uppercase.flex-col._reveal
+		.gap-col
+			a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1
+				span.menubar-text zzzzzzzzzzzz
+				<i class="fas fa-search box-2 "></i>
+			a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1
+				<i class="fas fa-search box-2 "></i>
+				input(type="text").menubar-text
+				span.menubar-tooltip.t-black tooltipxxxxxxxxxxxxxxxxxxxxx
+			a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1
+				<i class="fas fa-search box-2"></i>
+				span.menubar-text zzzzzzzzzzzz
+				span.menubar-tooltip.t-black tooltipxxxxxxxxxxxxxxxxxxxxx
+			a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1
+				<i class="fas fa-search box-2"></i>
+				span.menubar-text zzzzzzzzzzzz
+				span.menubar-tooltip.t-black tooltipxxxxxxxxxxxxxxxxxxxxx
+			a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1
+				<i class="fas fa-search box-2"></i>
+				span.menubar-text zzzzzzzzzzzz
+				span.menubar-tooltip.t-black tooltipxxxxxxxxxxxxxxxxxxxxx
+		a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1.mt-a
+			<i class="fas fa-search box-2"></i>
+			span.menubar-text zzzzzzzzzzzz
+			span.menubar-tooltip.t-black tooltipxxxxxxxxxxxxxxxxxxxxx
+
+
+	.content-m 
+		button.bg-red.t-light#btn-menu(class="w-100%") show menu
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")  

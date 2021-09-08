@@ -1,0 +1,104 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	include layout/_navbar.pug
+
+	main.content-m.my-5
+		<label class="switch">
+			<input type="checkbox">
+			<span class="slider"></span>
+			<span class="label-on">no</span>
+			<span class="label-off">off</span>
+		</label>
+
+	main.content-m.my-5._reveal-hover
+		.mockup-container
+			.mockup-border
+			.mockup-content.py-2
+				.shadow-bottom-sm.mockup-content-bar-top.flex.t-small.bg-white.px
+					div
+						<i class="fas fa-signal"></i>
+						<i class="fas fa-wifi"></i>				
+					span 2:45 p.m.
+					div
+						span 100%
+						<i class="fas fa-battery-three-quarters"></i>
+				.shadow-top-sm.mockup-content-bar-bottom.flex.t-small.bg-white.px
+					<i class="fas fa-trash-restore-alt box-2"></i>
+					<i class="fas fa-share-alt box-2"></i>
+					<i class="fas fa-envelope box-2 bg-info t-light round-circle"></i>
+					<i class="fas fa-plus box-2"></i>
+				.px.flex-col.ai-center.py-2
+					img(src="../../img/profile.png", alt="").w-100
+					p.t-3  Profile Name
+					p.t-2.t-gray.mb Lorem ipsum dolor sit amet.
+					.btn.bg-info.t-light.round-2 see more
+
+				.p.flex-col
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					div.mb
+						.float-left.mr.img-container.w-100.h-100
+							+img(100)
+						div
+							p.t-big.t-bold title card
+							p.t-small.t-gray Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+
+
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

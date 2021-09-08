@@ -1,0 +1,16 @@
+//- +img
+mixin img(imgSize)
+  img(src="https://via.placeholder.com/"+imgSize)
+
+//- class ---------
+mixin class(val)
+  p
+    |class="
+    strong= val
+    |"
+
+//- Use
+//- +class("box-4")
+//- - var n = 0; 
+//- ul while n <= 20 
+//-   li= n++

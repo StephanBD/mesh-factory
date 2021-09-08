@@ -1,0 +1,77 @@
+extend head/_link.pug
+block contenidos
+  h1(class="mbottom-2 t-center") Navbars
+
+  //--------------------------------------
+  .gap-col-2 
+    div( class=" bg-black-t")
+      div( class="content m-a    m-a ")
+        ul( class="flex align-center  md:space-end   " style=" height:  70px")
+          li( class="btn ") 
+            i.fas.fa-user
+          li( class="btn ") 
+            i.fas.fa-users
+
+    div( class=" bg-gray-light ")
+      div( class="content mx-a grid md:col-2 align-center t-center md:t-left")
+        h2( class=" ") Title
+        ul( class="md:flex align-center  gap-x    align-center ")
+          li( class="btn") home
+          li( class="btn")  content
+          li( class="btn")  something
+
+
+    div.bg-black-t
+      header.content-between.content-a.align-center(class="md:flex t-center md:t-left md:space-between")
+        div(class="w-100% md:w-fit-content t-center ")
+          img(src="http://snapsvg.io/assets/images/logo.svg" ).mr-a.h-50
+        li.p.t-info-hover
+          a(href="#") Home 1
+        li.p.bg-info-hover
+          a(href="#") pricing
+        li.p.bg-info-hover about
+        li.p.bg-info-hover
+          a(href="#" class="line-height: 50px;") Blog
+        li.p.bg-info-hover
+          a(href="#") contact
+        li.p.bg-info-hover
+          a(href="#") Contact
+
+    div.bg-gray-dark-t
+      header.p-x.align-center.space-evenly(class="md:flex md:space-between t-center")
+        img(src="http://snapsvg.io/assets/images/logo.svg" alt="").m-right-m.h-50
+        li.p.t-info-hover
+          a(href="#") Home 2
+        li.p.bg-info-hover
+          a(href="#") pricing
+        li.p.bg-info-hover about
+        li.p.bg-info-hover
+          a(href="#" class="line-height: 50px;") Blog
+        li.p.bg-info-hover
+          a(href="#") contact
+        a(href="#") 
+          button Contact
+
+    div.bg-black-t
+      ul.flex.align-center.content-a.space-center
+        li.p-y.p-x-2
+          a(href="#") Home 3
+        li.p-y.p-x-2
+          a(href="#") about
+        li.p-y.p-x-2
+          a(href="#") pricing
+        li.p-y.p-x-2
+          a(href="#") Blog
+        li.p-y.p-x-2
+          a(href="#") contact
+
+    .navbar-md.bg-gray-dark.t-light
+      a LOGO 
+      button.navbar-toggle 
+        .hamburger
+      .navbar-list 
+        a.btn Home
+        a.btn About
+
+
+

@@ -1,0 +1,34 @@
+@use "sass:math";
+@import "0_reset/minireset.scss";
+
+@import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+// @import "variables.scss";
+// //==========================================================*/
+@import "settings";
+@import "layout";
+@import "components";
+// @import "utilities";
+// ------------------------
+@import "utilities/border";
+@import "utilities/margin-padding";
+@import "utilities/utilities";
+// @import "utilities/filter";
+// @import "utilities/images";
+// @import "utilities/modal";
+// @import "utilities/shadow";
+@import "utilities/shapes";
+// @import "utilities/transform";
+@import "utilities/width-height";
+@import "utilities/background-colors";
+@import "utilities/typography";
+@import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+
+.active {
+  // background: Color(green);
+  border-color: green;
+}

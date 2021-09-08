@@ -1,0 +1,242 @@
+@use "sass:math";
+// @import "0_reset/minireset.scss";
+
+// @import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+@import "variables.scss";
+// //==========================================================*/
+// @import "settings";
+// @import "layout";
+// @import "components";
+// @import "utilities";
+// ------------------------
+@import "settings/maps";
+@import "settings/functions";
+@import "settings/mixins";
+// @import "components/_flipcard";
+
+// @import "settings/base";
+// @import "settings/forms";
+// @import "settings/dark-mode";
+// @import "settings/buttons";
+// @import "settings/toggles";
+// ------------------------
+// @import "debug";
+
+//-----------------------------------------------------//
+
+#{$thisName} {
+  @include card();
+  font-size: 16px;
+  max-width: Em(500px);
+  max-height: Em(ruleofthree(100, 500, 57) * 1px);
+  color: Color(white);
+  @include to($globalBP) {
+    max-height: Em(350px);
+  }
+  // -------------------
+  &-flip {
+    @include flip_h();
+  }
+  // -------------------
+
+  &-body,
+  &-body-front,
+  &-body-back {
+    @include body();
+    @include p-(Em($padding));
+    box-shadow: 0px 5px 9px rgb(0 0 0 / 50%);
+  }
+  &-body {
+    &-front {
+      @include front();
+      background: rgba($gray, 1);
+      background: radial-gradient(
+        circle,
+        rgba($gray, 1) 0%,
+        rgba($gray-dark, 1) 100%
+      );
+      border-bottom-left-radius: 2em;
+      border-top-right-radius: 2em;
+
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      align-content: center;
+      flex-wrap: nowrap;
+    }
+    &-back {
+      @include back();
+      // align-content: center;
+      // align-items: center;
+      // justify-content: center;
+      // flex-direction: row;
+      // flex-wrap: wrap;
+      background: rgb(57, 57, 68);
+      background: radial-gradient(
+        circle,
+        rgba($gray, 1) 0%,
+        rgba($gray-dark, 1) 100%
+      );
+      border-top-left-radius: 2em;
+      border-bottom-right-radius: 2em;
+      justify-content: flex-end;
+    }
+  }
+  // -------------------
+  &-centered {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &-mx {
+    @include mx-(auto);
+  }
+
+  // ---------------------------
+
+  &-heading {
+    font-size: 1.6em;
+    // font-weight: 700;
+  }
+  &-subtitle {
+    font-size: 1.2em;
+    font-weight: 300;
+    @at-root #{$thisName}-body-back & {
+      color: Color(orange);
+      text-decoration: underline;
+    }
+  }
+  &-heading,
+  &-subtitle {
+    @include to($globalBP) {
+      text-align: center;
+    }
+    // @at-root #{$thisName}-body-back & {
+    //   @include mx-(auto);
+    // }
+  }
+  &-list {
+    // margin-top: Em(16px);
+    // margin-top: auto;
+    // @include gap-col(8px);
+  }
+  &-contact {
+    margin-top: Em(8px);
+    font-size: 0.9em;
+    position: relative;
+    @include flex-dcia(
+      $align-items: center,
+      $justify-content: flex-start,
+      $flex-wrap: nowrap
+    );
+    &-info {
+      margin-left: Em(32px);
+      font-size: 1em;
+      height: min-content;
+      line-height: 1.1;
+    }
+    &-icon {
+      // @include box-px(32px, 24px, 32px);
+      @include box-em(2em, 1.5em);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background: Color(red);
+      position: absolute;
+      left: 0;
+      & > svg {
+        height: 1em;
+        width: 1em;
+        color: $orange;
+      }
+    }
+  }
+  &-brand {
+    // position: absolute;
+    // width: 100px;
+    // right: Em($padding);
+    // top: Em($padding);
+    margin-bottom: Em($padding);
+    height: Em(60px);
+    // @include mx-(auto);
+    display: block;
+    @include to($globalBP) {
+      order: -1;
+      position: static;
+      // width: auto;
+    }
+    &-back {
+      min-width: Em(100px);
+      width: Em(100px);
+      @include mx-(auto);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  // -----------------------------
+  &-bg {
+    &-front {
+      position: absolute;
+      //  @include fullWH();
+      // top: 20%;
+      left: -13rem;
+      top: 2rem;
+      // bottom: -125%;
+      width: 38em;
+      height: 38em;
+      // background: blue;
+      z-index: -1;
+      border-radius: 50%;
+      background-color: $orange;
+      transition: transform 2s;
+      // @at-root #{$thisName}:hover & {
+      //   transform: scale(1.5);
+      // }
+      box-shadow: 2px -9px 7px 0px $shadow_color;
+      @include after() {
+        position: absolute;
+        //  @include fullWH();
+        // top: 20%;
+        // left: -50%;
+        // bottom: -100%;
+        left: 0;
+        top: 0;
+        width: 35em;
+        height: 35em;
+        // background: blue;
+        border-radius: 50%;
+        background-color: $gray;
+        transition: transform 2s;
+        z-index: -1;
+        border: 2px solid #cd4a2e;
+      }
+      &-2 {
+        @extend .card-bg-front;
+        z-index: -2;
+        left: Em(-155px);
+        top: Em(-407px);
+        bottom: initial;
+        box-shadow: 5px 5px 9px $shadow_color;
+
+        &::after {
+          bottom: 0;
+          top: initial;
+          left: Em(20px);
+        }
+      }
+    }
+    &-img {
+      position: absolute;
+      right: -14rem;
+      top: 0;
+      height: 100%;
+      z-index: -3;
+    }
+  }
+}

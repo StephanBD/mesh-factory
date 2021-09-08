@@ -1,0 +1,62 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	include layout/_navbar.pug
+
+	.content-m.h-200.of-y-scroll.scroll-hide
+		.flex.b.h-800.gap-10
+			.bg-blue.flex-3 xxxx
+			.bg-blue.flex-3 xxxx
+			.bg-blue.flex-3 xxxx
+			.bg-blue.flex-3 xxxx
+	.content-m.h-200.of-y-scroll.scroll-round
+		.flex.b.h-800.gap-10
+			.bg-blue.flex-3 xxxx
+			.bg-blue.flex-3 xxxx
+			.bg-blue.flex-3 xxxx
+			.bg-blue.flex-3 xxxx
+	.content-m.h-500.of-y-scroll.scroll
+		.flex.b.h-800.gap-10
+			.bg-info.flex-3 xxxx
+			.bg-info.flex-3 xxxx
+			.bg-info.flex-3 xxxx
+			.bg-info.flex-3 xxxx
+		.flex.b.h-800.gap-10
+			.bg-info.flex-2 xxxx
+			.bg-info.flex-2 xxxx
+			.bg-info.flex-2 xxxx
+			.bg-info.flex-2 xxxx
+			.bg-info.flex-2 xxxx
+			.bg-info.flex-2 xxxx
+
+		.grid.b.h-800.gap-10.col-4
+			.bg-red xxxx
+			.bg-red xxxx
+			.bg-red xxxx
+			.bg-red xxxx
+
+		.columns.b.h-800.gap-10.col-4
+			.bg-green xxxx
+			.bg-green xxxx
+			.bg-green xxxx
+			.bg-green xxxx
+
+
+
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

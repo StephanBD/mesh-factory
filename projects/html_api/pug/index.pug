@@ -1,0 +1,35 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	//- link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+block content
+	//- .content-m
+	//- 	h1 Drag
+	//- 	.uploader 
+	//- 		h2 upload your file
+	//- 		p Accepts only .png .jpg .svg
+	//- 		//- .dragme.box-3.bg-orange.round(draggable="true")#item-0 x
+	//- 		input(type="file", name="", multiple, accept="image/*").files.b.b-info
+	//- 		.dropzone.b.b-red.b-dashed.h-200.flex-col.ai-center.jc-center: p 🎯 drag here
+	//- 		.list.flex.gap
+	//- .content-m
+	//- 	h1 Notification
+	.content-m
+		h1 Storage
+		.cookie.hide
+			p would you loke a cookie?
+			button.bg-green-light.t-light.t-bold(data-cookie-accept) yes
+			button.bg-danger-light.t-light.t-bold(data-cookie-reject) not
+
+
+//--------------------------------------
+block scripts
+	//- script(src="../js/app.js")
+	//- script(src="../js/notification.js")
+	script(src="../js/storage.js")

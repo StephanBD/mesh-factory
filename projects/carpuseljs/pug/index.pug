@@ -1,0 +1,69 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	p algo
+	.slide_bg.mb-5
+		.slide_cards 
+			.slide_card 	
+				+img
+				.slide_content
+					h1 heading 1
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ratione.
+			.slide_card 	
+				+img
+				.slide_content
+					h1 heading 2
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ratione.
+			.slide_card 	
+				+img
+				.slide_content
+					h1 heading 3
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ratione.
+			.slide_card 	
+				+img
+				.slide_content
+					h1 heading 4
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ratione.
+			.slide_card 	
+				+img
+				.slide_content
+					h1 heading 5
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ratione.
+			.slide_card 	
+				+img
+				.slide_content
+					h1 heading 6
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ratione.
+	p lorem
+	.slide.p.bg-red-light
+		.slide-inner.bg-gray
+			.btn-xl.bg-black-hover.t-light.slide-img 
+				i(class="fas fa-futbol").t-4  
+			.btn-xl.bg-black-hover.t-light.slide-img 
+				i(class="fas fa-football-ball").t-4  
+			.btn-xl.bg-black-hover.t-light.slide-img 
+				i(class="fas fa-golf-ball").t-4  
+			.btn-xl.bg-black-hover.t-light.slide-img 
+				i(class="fas fa-biking").t-4  
+			.btn-xl.bg-black-hover.t-light.slide-img 
+				i(class="fas fa-biking").t-4  
+
+	p slider infinite
+
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

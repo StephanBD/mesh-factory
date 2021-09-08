@@ -1,0 +1,98 @@
+%navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+@mixin navbar-list($breakPoint: $md) {
+  @include to($breakPoint) {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  @include from($breakPoint) {
+    display: flex;
+  }
+}
+
+@mixin navbar-toggle($breakPoint: $md) {
+  @include to($breakPoint) {
+    display: inline-block;
+    // position: absolute;
+    // right: 0;
+  }
+}
+
+.navbar {
+  &-sm,
+  &-md,
+  &-lg,
+  &-xl {
+    @extend %navbar;
+  }
+
+  &-center {
+    .navbar-sm & {
+      @include to($sm) {
+        @include mx-(auto);
+      }
+    }
+    .navbar-md & {
+      @include to($md) {
+        @include mx-(auto);
+      }
+    }
+  }
+
+  // --------------------
+  &-list {
+    top: 100%;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: $z-fixed_100;
+    .navbar-sm & {
+      @include navbar-list($sm);
+    }
+    .navbar-md & {
+      @include navbar-list($md);
+    }
+    // .navbar-lg & {
+    //   @include navbar-list($lg);
+    // }
+    // .navbar-xl & {
+    //   @include navbar-list($xl);
+    // }
+  }
+  // ------------------
+  &-toggle {
+    display: none;
+    .navbar-sm & {
+      @include navbar-toggle($sm);
+    }
+    .navbar-md & {
+      @include navbar-toggle($md);
+    }
+    // .navbar-lg & {
+    //   @include navbar-toggle($lg);
+    // }
+    // .navbar-xl & {
+    //   @include navbar-toggle($xl);
+    // }
+  }
+  // --------
+}
+
+// example:
+
+// <div class=" navbar-sm   ">
+//   <a>LOGO</a>
+
+//   <button class="navbar-toggle">x</button>
+
+//   <div class="navbar-list">
+//     <a class="btn">home</a>
+//     <a class="btn">contact</a>
+//   </div>
+
+// </div>

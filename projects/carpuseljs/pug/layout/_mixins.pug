@@ -1,0 +1,33 @@
+mixin navBar(brackpoint= "md")
+  div(class="navbar-" + brackpoint)&attributes(attributes)
+      
+    a LOGO 
+    button.navbar-toggle
+      .hamburger
+    .navbar-list 
+       block
+
+//- +navBar("sm")(class="btnxxxx")(id="toggleMenu")
+//-   li.btn Home
+//-   li about
+//-   li contact
+
+
+
+mixin navBar(brackpoint= "md")
+  div(class="navbar-" + brackpoint)&attributes(attributes)
+      
+    a LOGO 
+    button.navbar-toggle
+      .hamburger
+    .navbar-list 
+       block
+
+//- +navBar("sm")(class="btnxxxx")(id="toggleMenu")
+//-   li.btn Home
+//-   li about
+//-   li contact
+
+//- +img
+mixin img(imgSize=150)
+  img(src="https://via.placeholder.com/"+imgSize)

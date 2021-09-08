@@ -1,0 +1,69 @@
+header.bg-dark.menubar.p.t-light.t-uppercase.flex-col
+	//- .gap-col
+	nav
+		a.menubar-item(class="hover:bg-gray-light-t" ).round-1#btn-menu
+			<i class="fas fa-bars box-2 "></i>
+			span.menubar-text Navbar
+		//- ---------
+		a.menubar-item(class="hover:bg-gray-light-t" href="index.pug").round-1
+			<i class="fas fa-home box-2"></i>
+			span.menubar-text Start
+			span.menubar-tooltip.t-black Home
+		a.menubar-item(class="hover:bg-gray-light-t" href="all.pug").round-1
+			<i class="fas fa-home box-2"></i>
+			span.menubar-text All
+			span.menubar-tooltip.t-black Default
+
+		//- -----------------------
+		.menubar-item(class="hover:bg-gray-light-t" href="#").round-1.menubar-dropdown
+			.menubar-tooltip.t-black tooltip
+			<i class="fas fa-puzzle-piece box-2"></i>
+			.menubar-text components
+			.menubar-dropdown-item.menubar-dropdown.hide
+				a(href="buttons.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  Buttons
+				a(href="comp_flex.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  Flex
+				a(href="comp_cards.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  Cards
+				a(href="comp_mockup.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  Mockups
+		//- -----------------------
+		.menubar-item(class="hover:bg-gray-light-t" href="#").round-1.menubar-dropdown
+			.menubar-tooltip.t-black tooltip
+			<i class="fas fa-grip-vertical box-2"></i>
+			.menubar-text Sections
+			.menubar-dropdown-item.menubar-dropdown.hide
+				a(href="buttons.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  header
+		//- -----------------------
+		.menubar-item(class="hover:bg-gray-light-t" href="#").round-1.menubar-dropdown
+			.menubar-tooltip.t-black tooltip
+			<i class="far fa-newspaper box-2"></i>
+			.menubar-text pages
+			.menubar-dropdown-item.menubar-dropdown
+				a(href="page_article.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  article
+				a(href="page_product.pug")
+					<i class="fas fa-th-large box-2"></i>
+					span  product 
+
+
+
+
+	hr.mt-a.mb
+
+	a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1#dark-theme
+		<i class="far fa-moon box-2"></i>
+		span.menubar-text dark theme
+		span.menubar-tooltip.t-black dark theme
+	a.menubar-item(class="hover:bg-gray-light-t" href="#").round-1#revealer
+		<i class="far fa-eye box-2"></i>
+		span.menubar-text reveal borders
+		span.menubar-tooltip.t-black reveal borders

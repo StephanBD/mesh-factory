@@ -1,0 +1,43 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	//- link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+	style. 
+		.textarea {
+			width: 0;
+			height: 0;
+			visibility: none;
+			resize: none;
+			opacity:0;
+		}
+//--------------------------------------
+
+block content
+	header(role="banner")
+		a(rel="home") brand 
+		nav 
+			ul 
+				li 
+					a home
+	//---------------- 
+	main(role="main" tabindex="-1")
+		.box-4.bg-green
+		h1 hola 5
+
+
+	button#btn-copy.bg-green-light-t btn copy
+	#box.boxxx_z box
+
+	textarea#copy.textarea(name="", cols="30", rows="10" class="b b-red") 
+//--------------------------------------
+block foot
+	include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

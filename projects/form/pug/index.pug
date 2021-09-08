@@ -1,0 +1,67 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	//- link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	.content-m.p-md
+		a(href="masonry.pug") masonry
+	.content-m.p-md
+		<form action="" class=" t-light ">
+			<fieldset class="b p-md">
+				<legend class=" btn-sm">demo form kit</legend>
+				<p>
+					<label for="" class="inside">Text</label>
+					<input type="text" id="text" placeholder="Name" required>
+					<span class="helper"></span>
+				</p>
+				<p>
+					<label for="" class="inside">disabled</label>
+					<input type="text" id="disabled" placeholder="Name" value="disabled" disabled>
+				</p>
+				<p>
+					<label for="" class="inside">readonly</label>
+					<input type="email" id="rotext" value="readonly" required readonly>
+					<span class="helper"></span>
+				</p>
+				<p>
+					<label for="" class="inside">textarea</label>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+				</p>
+				<p>
+
+				<p>
+					<input type="checkbox" id="checkbox" placeholder="Name" required>
+					<label for="checkbox" >checkbox</label>
+				</p>
+				p 
+					select#select 
+						option( Value="1") 1
+						option( Value="2") 2
+						option( Value="3") 3
+						option( Value="4") 4
+						option( Value="5") 5
+				p
+					input#radio1(type="radio", name="radio" value="3")
+					label(for="radio1")  radio
+				p
+					input#radio2(type="radio", name="radio" value="1")
+					label(for="radio2")  radio
+				p.flex
+					input(type="button", value="button").round.btn-xl.bg-purple-dark-hover.t-light
+					input(type="submit", value="submit").round.btn-xl.bg-purple-dark-hover.t-light
+					button.btn-xl.bg-purple-dark-hover.t-light.round button
+
+			</fieldset>
+		</form>
+
+//--------------------------------------
+block scripts
+	//- script(src="../js/app.js")

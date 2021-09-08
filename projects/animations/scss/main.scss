@@ -1,0 +1,173 @@
+@use "sass:math";
+@import "0_reset/minireset.scss";
+
+@import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+// @import "variables.scss";
+// //==========================================================*/
+@import "settings";
+@import "layout";
+@import "components";
+// @import "utilities";
+// ------------------------
+@import "utilities/border";
+@import "utilities/margin-padding";
+// @import "utilities/utilities";
+// @import "utilities/filter";
+@import "utilities/images";
+// @import "utilities/modal";
+@import "utilities/shadow";
+@import "utilities/shapes";
+// @import "utilities/transform";
+@import "utilities/width-height";
+@import "utilities/background-colors";
+@import "utilities/typography";
+// @import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+
+.btn {
+  &-anim {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    @include before() {
+      height: 100%;
+      width: 100%;
+      background: blue;
+      top: 0;
+      right: 100%;
+      transition: right 0.3s;
+      z-index: -1;
+    }
+    &:hover {
+      &::before {
+        right: 0;
+      }
+    }
+    & span {
+      z-index: 2;
+    }
+  }
+  // ------------
+  &-bordes {
+    position: relative;
+    z-index: 0;
+    // overflow: hidden;
+    &:after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      // background: blue;
+      top: 0;
+      left: 0;
+      border: 2px solid $gray-dark;
+      transition: width 0.2s, height 0.2s;
+      // z-index: -1;
+    }
+    &::before {
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+    &::after {
+      border-left-color: transparent;
+      border-top-color: transparent;
+      top: auto;
+      left: auto;
+      right: 0;
+      bottom: 0;
+    }
+    &:hover::after,
+    &:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  // ------------------
+  &-anim-icon {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    span {
+      transition: transform 0.5s;
+      display: block;
+    }
+    &:hover {
+      & .btn-icon {
+        bottom: 0;
+      }
+      & .span {
+        // color: blue;
+        transform: translateY(-50px);
+      }
+    }
+  }
+  &-icon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    transition: bottom 0.5s;
+    line-height: 1.7;
+  }
+  // ------------------
+  &-circle {
+    position: relative;
+
+    overflow: hidden;
+    z-index: 0;
+    @include before() {
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      z-index: -1;
+      background: blue;
+      border-radius: 50%;
+      transition: height 0.3s, width 0.3s;
+      transform: translate(-50%, -50%);
+    }
+    &:hover::before {
+      transform: translate(-50%, -50%);
+      height: 200px;
+      width: 200px;
+    }
+  }
+  // ------------------
+  &-social {
+    border-radius: 50%;
+    // vertical-align: 5px;
+    position: relative;
+    i {
+      transition: color 0.5s;
+      vertical-align: super;
+    }
+
+    overflow: hidden;
+    z-index: 0;
+    background: blue;
+    @include before() {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: $gray;
+      border-radius: 50%;
+      transition: transform 0.5s;
+      transform-origin: top center;
+      transform: scale(1.2) translateY(0);
+    }
+    &:hover {
+      color: Color(white);
+      &::before {
+        transform: scale(0) translateY(-100%);
+      }
+    }
+  }
+}

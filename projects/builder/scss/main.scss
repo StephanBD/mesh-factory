@@ -1,0 +1,57 @@
+@use "sass:math";
+@import "0_reset/minireset.scss";
+
+@import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+// @import "variables.scss";
+// //==========================================================*/
+@import "settings";
+@import "layout";
+@import "components";
+// @import "utilities";
+// ------------------------
+// @import "utilities/border";
+// @import "utilities/margin-padding";
+// @import "utilities/utilities";
+// @import "utilities/filter";
+// @import "utilities/images";
+// @import "utilities/modal";
+// @import "utilities/shadow";
+// @import "utilities/shapes";
+// @import "utilities/transform";
+// @import "utilities/width-height";
+// @import "utilities/background-colors";
+// @import "utilities/typography";
+// @import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+// === === === === === === === === === === === === //
+
+.menu {
+  &-context {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include prop(t white, bg dark, p $padding);
+  }
+  &-body {
+    border-bottom: 1px solid Color(light);
+    margin-bottom: 10px;
+    // @include py-($padding);
+  }
+  &-finish {
+    @include prop(t dark, bg success-light, ml auto, display block);
+  }
+}
+
+.card {
+  border-radius: 50px;
+  height: 30px;
+  background-color: Color(yellow);
+}
+input,
+select {
+  border-radius: $border-radius;
+}

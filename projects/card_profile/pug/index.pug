@@ -1,0 +1,85 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	//- link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+//--------------------------------------
+
+block content
+	- var carta = "card";
+	//- .flip_container.h-100.w-100
+	//- 			.flip-h
+	//- 				.front.bg-info front
+	//- 				.back.bg-danger back
+	section(style="height:100vh;background:rgba(14, 17, 22, 1);display:flex;align-items:center;justify-content:center;flex-direction:column;")._reveal
+		// **************** copy from here ****************
+		div(class=carta)
+			//- div(class=carta+"-flip") 			
+			address(class=carta+"-body-front")
+				.card-header
+					//- <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" class="card-brand"  >
+					//- 	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					//- </svg>  
+					<svg xmlns="http://www.w3.org/2000/svg" class="card-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+						<path d="M12 14l9-5-9-5-9 5 9 5z" />
+						<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+					</svg>
+					p(class=carta+"-heading") Brand name 
+				h2.card-total 198
+				p.card-subtitle Articles read 
+				ul(class=carta+"-list")
+					li(class=carta+"-contact")
+						p Webdev
+						p.card-progress-count 40
+						.card-progress: .card-progress-fill(style="width:100%;")
+					li(class=carta+"-contact")
+						p Javscript
+						p.card-progress-count 32
+						.card-progress: .card-progress-fill(style="width:80%;")
+					li(class=carta+"-contact")
+						p Rect
+						p.card-progress-count 28
+						.card-progress: .card-progress-fill(style="width:60%;")
+					li(class=carta+"-contact")
+						p Career
+						p.card-progress-count 13
+						.card-progress: .card-progress-fill(style="width:30%;")
+				p Social
+				.card-row
+					.card-row-icon 
+						<svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor"   >
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>  
+					.card-row-icon(style="background:#00ff3c") 
+						<svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor"   >
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>  
+					.card-row-icon(style="background:cyan") 
+						<svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor"   >
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>  
+					
+				//- 	<svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" class="card-row-icon-logo"  >
+				//- 		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+				//- </svg>  
+				<svg xmlns="http://www.w3.org/2000/svg" class="card-row-icon-logo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+				</svg>
+				
+				div(class=carta+"-bg-front")
+				div(class=carta+"-bg-shadow")
+		// **************** copy to here ****************
+
+
+//--------------------------------------
+block foot
+
+
+//--------------------------------------
+block scripts
+	//- script(src="js/app.js")

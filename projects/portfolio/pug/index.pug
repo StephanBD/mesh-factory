@@ -1,0 +1,173 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'portfolio'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	//- link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+block content
+	//- mouse circle
+	.mouse-circle
+	.mouse-dot
+	//- container
+	.container
+		//- page BG
+		.page-bg
+		
+		//- progressbar
+		a.progress-bar(href="#").center.sticky 
+			.half-circle
+			.half-circle
+			.half-circle-top
+			.progress-bar-circle.center &#8595;
+
+		//- navigation
+		.menu-icon.center.sticky
+			.menu-icon-line
+			.menu-icon-line
+
+		//- navbar
+		.navbar 
+			a.navbar-link.pointer-enter(href="#section-1") Home
+			a.navbar-link.pointer-enter(href="#section-2") About me
+			a.navbar-link.pointer-enter(href="#section-3") Projects
+			a.navbar-link.pointer-enter(href="#section-4") Services
+			a.navbar-link.pointer-enter(href="#section-5") Contact
+
+		//- section1 
+		section.section-1.center#section-1
+			//- logo
+			a.logo(href="") Nick Brown 
+			//- animated circles
+			.circles 
+				.circle.circle-1 
+				.circle.circle-2 
+				.circle.circle-3 
+				.circle.circle-4 
+			.main-circle.center
+				img(src="../images/landing/designer.jpg", alt="")
+			//- feature text
+			h4.feature-text.feature-text-1 Creative
+			h4.feature-text.feature-text-2 Design
+			//- 
+			a.main-btn(href="#")
+				.main-btn-content.center
+					.main-btn-line 
+					.main-btn-line 
+					.main-btn-line 
+					span Projects
+		section.section-2#section-2
+			//- heading
+			h1.section-heading About me 
+			//- text
+			p.about-me-text 
+			a.main-btn(href="#")
+				.main-btn-content.center
+					.main-btn-line 
+					.main-btn-line 
+					.main-btn-line 
+					span Let´s talk
+		section.section-3#section-3 
+			//- heading
+			h1.section-heading My work 
+			//- projects
+			.projects.center
+				.project.pointer-enter 
+					img(src="../images/projects/project-1.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-2.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-3.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-4.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-5.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-6.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-7.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-8.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-9.jpg")
+				.project.pointer-enter 
+					img(src="../images/projects/project-10.jpg")
+					//- 
+			button.project-hide-btn &laquo;Close
+			//- 
+			a.main-btn(href="#").projects-btn
+				.main-btn-content.center
+					.main-btn-line 
+					.main-btn-line 
+					.main-btn-line 
+					span Show more
+		//- section 4
+		section.section-4#section-4
+			//- heading
+			h1.section-heading What i can 
+			//- services
+			.services-wrapper.center
+				.service 
+					a.service-btn.pointer-enter(href="#") 
+						span UI/UX 
+					p.service-text Landing Pages, User Flow, Wireframing Prototyping, Mobile App, Design, Web App
+				.service 
+					a.service-btn.pointer-enter(href="#") 
+						span Icon/Illustration
+					p.service-text Character Design, Icon Set, Illustration Guide, Illustration Set
+				.service 
+					a.service-btn.pointer-enter(href="#") 
+						span Branding
+					p.service-text Visual Identity, Stationary Kit, Marketing Materials
+				.service 
+					a.service-btn.pointer-enter(href="#") 
+						span Development
+					p.service-text HTML/CSS, JavaScript, Wordpress, Responsive Website
+				.service 
+					a.service-btn.pointer-enter(href="#") 
+						span Motion
+					p.service-text 2D Animation, Ui Motion
+				.service 
+					a.service-btn.pointer-enter(href="#") 
+						span Photography
+					p.service-text Travel Photography, Product Photography
+		//- section 5
+		section.section-5.center#section-5
+			//- heading
+			h1.section-heading Contact me
+			//- form
+			.form-wrapper 
+				h2.form-heading Let´s talk 
+				form.contact-form.center(action="") 
+					input.pointer-enter.contact-form-input(placeholder="Name" type="text" autocomplete="off")#name
+					p.message error message
+					input.pointer-enter.contact-form-input(placeholder="Email" type="email" autocomplete="off")#email
+					p.message error message
+					input.pointer-enter.contact-form-input(placeholder="Subject" type="text" autocomplete="off")#subject
+					p.message error message
+					textarea.pointer-enter.contact-form-input(name="", cols="30", rows="10" placeholder="Message" autocomplete="off")#message
+					p.message error message
+					input.pointer-enter.form-submit-btn(placeholder="Subject" type="submit" value="send Request")
+			.slideshow 
+				a(href="#").slideshow-link
+					img(src="../images/social-icons/slideshow-img-1.png", alt="")
+				a(href="#").slideshow-link
+					img(src="../images/social-icons/slideshow-img-2.png", alt="")
+				a(href="#").slideshow-link.light
+					img(src="../images/social-icons/slideshow-img-3.png", alt="")
+				a(href="#").slideshow-link
+					img(src="../images/social-icons/slideshow-img-4.png", alt="")
+				a(href="#").slideshow-link
+					img(src="../images/social-icons/slideshow-img-5.png", alt="")
+
+//--------------------------------------
+block foot
+	
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

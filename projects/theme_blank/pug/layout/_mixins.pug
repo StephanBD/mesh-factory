@@ -1,0 +1,72 @@
+mixin navBar(brackpoint= "md")
+  div(class="navbar-" + brackpoint)&attributes(attributes)
+
+    a LOGO 
+    button.navbar-toggle
+      .hamburger
+    .navbar-list 
+      block
+
+//- +navBar("sm")(class="btnxxxx")(id="toggleMenu")
+//-   li.btn Home
+//-   li about
+//-   li contact
+
+
+
+mixin navBar(brackpoint= "md")
+  div(class="navbar-" + brackpoint)&attributes(attributes)
+
+    a LOGO 
+    button.navbar-toggle
+      .hamburger
+    .navbar-list 
+      block
+
+//- +navBar("sm")(class="btnxxxx")(id="toggleMenu")
+//-   li.btn Home
+//-   li about
+//-   li contact
+
+
+
+//- +img
+mixin img(imgSize)
+  img(src="https://via.placeholder.com/"+ imgSize)&attributes(attributes)
+
+//- +img
+mixin figure(imgSize )
+  figure
+    img(src="https://via.placeholder.com/"+ imgSize)
+    figcaption.t-center.t-gray.t-small
+      block
+//- +class
+//- mixin class(xx)
+//-   span()&attributes(attributes)= 'class="' + xx + '"'
+
+
+
+//- class ---------
+mixin class(val)
+  p()&attributes(attributes)
+    |class="
+    = val
+    |"
+
+//- mixin class(xx)
+//-   |class="
+//-   = `${xx}`
+//-   |"
+
+
+//- Use
+//- +class("box-4")
+//- - var n = 0; 
+//- ul while n <= 20 
+//-   li= n++
+
+//- pre-----------
+mixin pre(val)
+  p.m-0 #{val}
+
+//- +pre('<div class="bg-green btn round t-light">')

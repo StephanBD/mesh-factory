@@ -1,0 +1,198 @@
+//-------------------card----------------------------------//
+.card {
+  // @extend .d-inline-block;
+  // width: 100%;
+  // width: auto;
+  // @include from($sm) {
+  //   width: 400px;
+  // }
+  // background-color: white;
+
+  height: fit-content;
+  // height: min-content;
+  overflow: hidden;
+  border-collapse: collapse;
+  min-width: 200px;
+
+  @include from($sm) {
+    @each $point in breakpoints {
+      &-#{$point} {
+      }
+    }
+  }
+
+  // flex-basis: 20%;
+  //   flex-grow: 1;
+  //   flex-shrink: 1;
+  // flex ------------------
+  &-flex {
+    @extend .card;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // custom styles -----------------------
+  &.stretch {
+    height: auto;
+  }
+  & .head {
+    // font-size: $font-size + 0.25;
+    font-weight: 700;
+    text-align: center;
+  }
+  & .body {
+    // font-size: $font-size;
+    // height: 100%;
+    &-m {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+  & .footer {
+    // margin: auto ;
+    font-size: $font-size - 0.25;
+    align-self: flex-start;
+    justify-self: flex-start;
+    // font-style: italic;
+    // background-color: red;
+  }
+
+  &-column {
+    @extend .card;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+  }
+  &-row {
+    // width: 30%;
+    @extend .card;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+// --------------------------------------
+.card-row {
+  position: relative;
+  display: block;
+  @include from($sm) {
+    padding-left: 200px;
+  }
+
+  // padding-left: 160px;
+  & > .card-img {
+    // height: 160px;
+    display: block;
+    left: 0;
+    top: 0;
+    @include from($sm) {
+      @include img-container;
+      height: 100%;
+      position: absolute;
+      padding-left: inherit;
+      // width: 160px;
+      // & > img {
+      //   height: 100%;
+      // }
+    }
+  }
+  // & > .card-body {
+  // @include from($sm) {
+  //   margin-left: 160px;
+  // }
+  // }
+  // &-footer {
+  //   position: absolute;
+  //   top: 100%;
+  //   width: 100%;
+  //   left: 0;
+  // }
+  // &-header {
+  //   position: absolute;
+  //   bottom: 100%;
+  //   width: 100%;
+  //   left: 0;
+  // }
+  // &-float-left {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 100%;
+  //   transform: rotate(90deg) translateY(0%);
+  //   transform-origin: 0 0;
+  // }
+}
+
+//------------------card3----------------------------------
+
+// %card-img-float {
+//   display: block;
+//   // height: auto;
+// }
+.card-float {
+  position: relative;
+  clear: both;
+  // &::after {
+  //   content: "";
+  //   clear: both;
+  // }
+  &-r,
+  &-l {
+    // position: relative;
+    // clear: both;
+    @extend .card-float;
+  }
+
+  $className: #{&};
+
+  & > .card-img {
+    // max-width: 200px;
+    display: block;
+    @include from($sm) {
+      float: left;
+    }
+
+    // &-left,
+    // &-l {
+    //   display: block;
+    //   @include from($sm) {
+    //     float: left;
+    //   }
+    // }
+    // &-right,
+    // &-r {
+    //   display: block;
+    //   @include from($sm) {
+    //     float: right;
+    //   }
+    // }
+
+    @at-root #{$className}-r > .card-img {
+      float: right;
+    }
+    @at-root #{$className}-l > .card-img {
+      float: left;
+    }
+  }
+
+  & > .card-body {
+    display: block;
+    // clear: right;
+  }
+}
+
+//------------------card4----------------------------------
+// .card-flex {
+//   @include flex-dcia(row, scpace-between);
+//   flex-wrap: wrap;
+//   & > .card-img {
+//     flex: 0 0 auto;
+//     min-width: 200px;
+//   }
+//   & > .card-body {
+//     flex: 1 1 auto;
+//     min-width: 200px;
+//   }
+// }

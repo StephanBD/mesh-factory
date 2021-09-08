@@ -1,0 +1,52 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+
+
+block content
+	h1 buttons
+	.content-m.p.col-gap
+		button.bg-red.t-light.btn-anim: span button
+		hr.b-0.bg-0
+		button.bg-gray.t-light.btn-bordes: span button
+	.content-m.p.col-gap
+		button.bg-red.t-light.btn-anim-icon
+			span.span text
+			i.fas.fa-home.btn-icon
+		hr.b-0.bg-0
+		button.bg-red.t-light.btn-circle
+			span.span circle
+		hr.b-0.bg-0
+		button.t-dark.btn-social.box-3
+			i.fas.fa-home
+		hr.b-0.bg-0
+	.content-m.p 
+		.flip_container.h-200.w-200
+			.flip-h 
+				.front.b.p.bg-cyan
+					p front
+				.back.b.p.bg-yellow
+					p back
+		.flip_container.h-200.w-200
+			.flip-v 
+				.front.b.p.bg-cyan
+					p front
+				.back.b.p.bg-yellow
+					p back
+		.flip_container.h-200.w-200
+			.flip-d 
+				.front.b.p.bg-cyan
+					p front
+				.back.b.p.bg-yellow
+					p back
+	hr.my
+//--------------------------------------
+block scripts
+	//- script(src="../js/app.js")

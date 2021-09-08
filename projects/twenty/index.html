@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+	<style>
+
+	</style>
+</head>
+
+<body class="img-container full-vh bg-gray-dark ">
+	<img
+		src="https://images.unsplash.com/photo-1576862970939-93e570b3bca1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1234&q=80"
+		alt="" class="opacity-8">
+
+	<!-- ------------- -->
+
+	<div class="fixed  full-v bg-black  t-light  opacity-0 overlay" id="overlay">
+		<nav class="">
+			<ul class="full-v flex-column jc-stretch ">
+				<li id="nav-1" class="slide-out-1 h-20% overflow-hidden bg-black">
+					<a class="relative top-40% t-uppercase t-white t-space-2 d-block t-center" href="#home">Home</a>
+				</li>
+				<li id="nav-2" class="slide-out-2 h-20% overflow-hidden bg-red">
+					<a class="relative top-40% t-uppercase t-white t-space-2 d-block t-center" href="#about">about</a>
+				</li>
+				<li id="nav-3" class="slide-out-3 h-20% overflow-hidden bg-orange">
+					<a class="relative top-40% t-uppercase t-white t-space-2 d-block t-center" href="#skills">skills</a>
+				</li>
+				<li id="nav-4" class="slide-out-4 h-20% overflow-hidden bg-green">
+					<a class="relative top-40% t-uppercase t-white t-space-2 d-block t-center" href="#projects">projects</a>
+				</li>
+				<li id="nav-5" class="slide-out-5 h-20% overflow-hidden bg-blue">
+					<a class="relative top-40% t-uppercase t-white t-space-2 d-block t-center" href="#contact">contact</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="menu-bars absolute top right" id="menu-bars">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
+
+
+	<!-- ---------- -->
+	<!-- <div class="modal t-light bg-black opacity-7">
+		1111111111
+	</div> -->
+
+
+
+	<!--*********************script*********************-->
+	<script>
+		// function myFunction(x) {
+		// 	x.classList.toggle("change");
+		// }
+		const menuBars = document.getElementById("menu-bars")
+		const overlay = document.getElementById("overlay")
+		const nav1 = document.getElementById("nav-1")
+		const nav2 = document.getElementById("nav-2")
+		const nav3 = document.getElementById("nav-3")
+		const nav4 = document.getElementById("nav-4")
+		const nav5 = document.getElementById("nav-5")
+		const navItems = [nav1, nav2, nav3, nav4, nav5]
+
+		// ----
+		function navAnimation(direction1, direction2) {
+			navItems.forEach((nav, i) => {
+				nav.classList.replace(`slide-${direction1}-${i + 1}`, `slide-${direction2}-${i + 1}`)
+			})
+		}
+		// ----
+		function toggleNav(e) {
+			menuBars.classList.toggle("change")
+			overlay.classList.toggle("overlay-active")
+
+			if (overlay.classList.contains("overlay-active")) {
+				// animate in
+				navAnimation("out", "in")
+			} else {
+				// animate out
+				navAnimation("in", "out")
+			}
+		}
+		// ----
+		menuBars.addEventListener("click", toggleNav)
+		nav1.addEventListener("click", toggleNav)
+		nav2.addEventListener("click", toggleNav)
+		nav3.addEventListener("click", toggleNav)
+		nav4.addEventListener("click", toggleNav)
+		nav5.addEventListener("click", toggleNav)
+	</script>
+</body>
+
+</html>

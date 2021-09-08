@@ -1,0 +1,202 @@
+//-------------------pointer cursor----------------------------------//
+@mixin pointer {
+  cursor: pointer;
+}
+.pointer {
+  @include pointer;
+}
+// ---------------
+@for $var from 1 to 6 {
+  .h#{$var} {
+    @extend h#{$var};
+  }
+}
+//-------------------font style----------------------------------//
+.t {
+  @each $value in $font-style {
+    &-#{$value} {
+      font-style: $value;
+    }
+  }
+}
+//-------------------letter spacing----------------------------------//
+.t-space {
+  @each $value in $letter-spacing {
+    &-#{$value} {
+      letter-spacing: $value;
+    }
+  }
+  @for $value from 0 to 10 {
+    &-#{$value} {
+      letter-spacing: $value * 1px;
+    }
+  }
+}
+//------------------transparent----------------------------------*/
+.t-transparent,
+.t-t {
+  color: transparent;
+}
+//-------------------text color----------------------------------//
+.t {
+  @include breakpointMaker {
+    @each $key, $value in $colors {
+      &-#{"" + $key} {
+        @include t-($key);
+        &-hover:hover {
+          @include t-($key);
+        }
+      }
+    }
+  }
+}
+
+//-------------------font weight----------------------------------//
+.bold,
+.t-bold {
+  @include breakpointMaker {
+    font-weight: bold;
+  }
+}
+//-------------------font size----------------------------------//
+
+.t {
+  @each $key, $value in $fontSizes {
+    @include breakpointMaker {
+      &-#{"" + $key} {
+        font-size: $value;
+      }
+    }
+  }
+  // ------
+  @for $i from 1 through 20 {
+    @include breakpointMaker(true) {
+      &-#{$i} {
+        font-size: Div(($i * 4rem), 5);
+        // font-size: $i * 1.618rem;
+      }
+    }
+  }
+}
+//-------------------line height----------------------------------//
+
+.t-line {
+  @for $i from 1 through 10 {
+    @include breakpointMaker(true) {
+      &-#{$i} {
+        line-height: $i * 0.3;
+      }
+    }
+  }
+}
+
+//-------------------headings----------------------------------//
+// .display {
+//   @for $i from 1 through 4 {
+//     &-#{$i} {
+//       @include from($sm) {
+//         font-size: 8rem - $i;
+//         // font-weight: 300;
+//       }
+//     }
+//   }
+// }
+
+//-------------------font align----------------------------------//
+
+.t {
+  @each $value in $align {
+    @include breakpointMaker(true) {
+      &-#{$value},
+      &-#{$value}:not([align]) {
+        text-align: $value;
+      }
+    }
+  }
+}
+//-------------------font transform----------------------------------//
+.t {
+  @each $value in $text-transform {
+    @include breakpointMaker {
+      &-#{$value} {
+        text-transform: $value;
+      }
+    }
+  }
+}
+//-------------------font transform----------------------------------//
+.t {
+  @each $value in $text-decoration {
+    @include breakpointMaker {
+      &-#{$value} {
+        text-decoration: $value;
+      }
+    }
+  }
+}
+
+//-------------------font transform----------------------------------//
+
+.tws,
+.t-spacing,
+.t-word {
+  &-normal {
+    word-spacing: normal;
+  }
+  @for $value from 0 to 11 {
+    @include breakpointMaker {
+      &-#{$value} {
+        word-spacing: $value * 1px;
+      }
+    }
+  }
+}
+
+//-------------------Drop-Cap----------------------------------//
+@mixin drop-cap {
+  &:first-letter {
+    display: block;
+    margin: 5px 0 0 5px;
+    float: left;
+    // color: #ff3366;
+    font-size: 5.4em;
+    font-family: Georgia, Times New Roman, serif;
+  }
+}
+
+.drop-cap {
+  @include drop-cap;
+}
+
+//-------------------placeholder color----------------------------------//
+.ph {
+  &-t::placeholder,
+  &-transparent::placeholder {
+    color: transparent;
+  }
+  // @include breakpointMaker {
+  @each $key, $value in $colors {
+    &-#{"" + $key}::placeholder {
+      @include t-($key);
+    }
+  }
+  // }
+}
+
+//-------------------writing mode----------------------------------//
+$writing-mode: (horizontal-tb, vertical-rl, vertical-lr, sideways-rl);
+
+.writing {
+  @each $value in $writing-mode {
+    &-#{$value} {
+      writing-mode: $value;
+    }
+  }
+}
+
+// inline-size
+// block-size
+// padding-block-start
+// padding-block-end
+// border-block-start
+// border-block-end

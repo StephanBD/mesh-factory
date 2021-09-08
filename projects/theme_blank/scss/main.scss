@@ -1,0 +1,235 @@
+@use "sass:math";
+@import "0_reset/minireset.scss";
+// @import "0_reset/normalize.scss";
+
+// @import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+@import "variables.scss";
+// //==========================================================*/
+// @import "settings";
+// @import "layout";
+// @import "components";
+// @import "utilities";
+// ------------------------
+@import "settings/maps";
+@import "settings/functions";
+@import "settings/mixins";
+
+@import "settings/base";
+@import "settings/forms";
+@import "settings/dark-mode";
+@import "settings/buttons";
+@import "settings/toggles";
+
+// ------------------------
+@import "layout/columns";
+@import "layout/flex";
+@import "layout/grid";
+@import "layout/col";
+@import "layout/layout";
+
+// ------------------------
+@import "components/animation";
+@import "components/components";
+@import "components/flipcard";
+@import "components/navbar";
+@import "components/profile";
+@import "components/sidebar";
+@import "components/toggle-menu";
+@import "components/cards";
+@import "components/zoomefect";
+@import "components/mockups";
+
+// ------------------------
+@import "utilities/border";
+@import "utilities/margin-padding";
+@import "utilities/utilities";
+// @import "utilities/filter";
+@import "utilities/images";
+@import "utilities/modal";
+@import "utilities/shadow";
+@import "utilities/shapes";
+// @import "utilities/transform";
+@import "utilities/width-height";
+@import "utilities/background-colors";
+@import "utilities/typography";
+@import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+
+.menubar {
+  $menubar: &;
+  // @include t-(light);
+  // overflow: hidden;
+  // transition: width 0.5s;
+  height: 100vh;
+  width: fit-content;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0rem;
+  z-index: $z-modal_1000;
+  min-width: max-content;
+  will-change: width;
+  transition: width 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.2);
+  border-right: 1px solid white;
+  font-size: 1.4rem;
+  // box-sizing: content-box;
+  &-tooltip {
+    // height: 90%;
+    overflow: hidden;
+    position: absolute;
+    top: 0%;
+    left: 120%;
+    // background: inherit;
+    background: $gray;
+    z-index: $z-fixed_100;
+    color: inherit;
+    transform: translateY(-50%);
+    // padding: $padding;
+    // display: none;
+    line-height: 1.8;
+    transition: top 0.3s, opacity 0.4s;
+    will-change: top, opacity;
+    // height: 0;
+    display: inline-block;
+    pointer-events: none;
+    width: max-content;
+    @include px-(Div($padding, 2));
+    opacity: 0;
+    font-size: $small;
+  }
+
+  &-item {
+    // overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    &:hover .#{menubar}-tooltip {
+      top: 50%;
+      opacity: 1;
+    }
+  }
+
+  // -----------------
+  &-dropdown {
+    $dropdownName: &;
+    // &-item {
+
+    // }
+
+    // & > * {
+    //   display: none;
+    //   margin-left: Div($margin, 2);
+    //   height: 0;
+    // }
+
+    // &.active > #{$dropdownName}-item {
+    //   // height: 1.4em;
+    //   // display: block;
+    //   width: 100%;
+    //   margin-left: Div($margin, 2);
+    // }
+
+    &-item {
+      /* flex: 1; */
+      height: 0;
+      width: 0;
+      flex-basis: 100%;
+      /* display: block; */
+      // flex-grow: 1;
+      // flex-shrink: 0;
+      // display: none;
+      // margin-left: Div($margin, 2);
+      overflow: hidden;
+
+      @include flex-dcia(column);
+    }
+  }
+
+  // // -----------------
+  // &-dropdown {
+  //   $dropdownName: &;
+  //   &-item {
+  //     // height: 0;
+  //     // transition: height 0.5s;
+  //     // line-height: 1.4em;
+  //     display: none;
+  //     margin-left: $margin;
+  //     height: 0;
+  //   }
+
+  //   &.active > #{$dropdownName}-item {
+  //     // height: 1.4em;
+  //     display: block;
+  //   }
+  // }
+
+  &-text,
+  & input {
+    // &-text {
+    // display: none;
+    @include flex-12(auto);
+    opacity: 0;
+    display: inline-block;
+    will-change: width, opacity, margin-left;
+    overflow: hidden;
+
+    transition: opacity 0.4s, margin-left 0.3s 0.2s;
+    width: 0;
+    margin-left: 0;
+    // height: 0;
+
+    // pointer-events: none;
+    // margin-left: $margin;
+    // transition-timing-function: cubic-bezier(0.6, -0.9, 0.5, 1);
+
+    // transition: opacity 0.2s 0.2s;
+    // will-change: opacity;
+    // position: absolute;
+    // top: 20%;
+    // left: 20%;
+    // width: max-content;
+    // transform: translateX(0px);
+  }
+
+  & input {
+    pointer-events: all;
+  }
+
+  &.active {
+    width: 200px;
+    & .#{menubar}-text {
+      // transform: translate(-50%, 50%);
+      margin-left: Div($margin, 2);
+      // width: 100%;
+      opacity: 1;
+      // height: auto;
+      // animation: width 0.5s ;
+    }
+    & .#{menubar}-tooltip {
+      display: none;
+    }
+    // & .#{menubar}-dropdown-item {
+    //   // display: none;
+    //   height: auto;
+    // }
+    // & .#{menubar}-dropdown > * {
+    //   // display: none;
+    //   height: auto;
+    // }
+    & .#{menubar}-dropdown-item {
+      // display: none;
+      height: auto;
+      // width: 100%;
+      margin-left: Div($margin, 2);
+      // &.active {
+      //   display: block;
+      // }
+    }
+  }
+}

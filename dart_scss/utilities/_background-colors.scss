@@ -1,0 +1,128 @@
+//-------------------backgrounds----------------------------------//
+
+.bg {
+  &-transparent,
+  &-t {
+    background-color: transparent;
+  }
+  &-inherit,
+  &-i {
+    background-color: inherit;
+  }
+  // -----------------------------------
+  @include breakpointMaker {
+    @each $key, $value in $colors {
+      // ----------
+      &-#{"" + $key},
+      &-#{"" + $key}-hover {
+        @include bg-($key);
+      }
+
+      // ----------
+      &-#{"" + $key} {
+        $colorName: #{&};
+        $colorName: erase($colorName, " ");
+        $colorName: erase($colorName, ".");
+        $colorName: erase($colorName, "#");
+        @at-root .hover\:#{$colorName}:hover {
+          @include bg-($key);
+        }
+      }
+
+      // ----------
+      &-#{"" + $key}-hover {
+        &:hover {
+          background-color: lighten($value, 10%);
+        }
+      }
+      //   ----------
+      // @at-root body.dark-theme {
+      //   & .bg-#{"" + $key},
+      //   & .bg-#{"" + $key}-hover {
+      //     background: ColorDark($key);
+      //   }
+      //   & .bg-#{"" + $key}-hover {
+      //     &:hover {
+      //       background-color: lighten($value, $lighten);
+      //     }
+      //   }
+      // }
+      // -----------
+    }
+  }
+  // -----------------------------------
+
+  // @include breakpointMaker {
+  //   @each $key, $value in $colors {
+  //     &-#{"" + $key} {
+  //       @include bg-($key);
+  //       &-hover {
+  //         @include bg-($key, hover);
+  //         &-t:hover {
+  //           @include bg-($key, $text: true);
+  //         }
+  //       }
+  //       &-t {
+  //         @include bg-($key, $text: true);
+  //       }
+  //     }
+  //   }
+  // }
+
+  // @include breakpointMaker {
+  //   @each $key, $value in $colors {
+  //     &-#{"" + $key} {
+  //       @include bg-($key);
+  //       //------------------------------------------*/
+  //       // &-hover {
+  //       //   &:hover {
+  //       //     background-color: darken($value, $darken);
+  //       //   }
+  //       // }
+  //       //------------------------------------------*/
+  //       $colorName: #{&};
+  //       $colorName: erase($colorName, " ");
+  //       $colorName: erase($colorName, ".");
+  //       $colorName: erase($colorName, "#");
+
+  //       @at-root .hover\:#{$colorName}:hover {
+  //         @include bg-($key);
+  //       }
+  //       //------------------------------------------*/
+  //       &-t {
+  //         @if (lightness(Color($key)) > 40) {
+  //           @include bg-($key, $text: dark);
+  //         } @else {
+  //           @include bg-($key, $text: light);
+  //         }
+  //         //------------------------------------------*/
+  //         $colorName: #{&};
+  //         $colorName: erase($colorName, " ");
+  //         $colorName: erase($colorName, ".");
+  //         $colorName: erase($colorName, "#");
+
+  //         @at-root .hover\:#{$colorName}:hover {
+  //           @if (lightness(Color($key)) > 40) {
+  //             @include bg-($key, $text: dark);
+  //           } @else {
+  //             @include bg-($key, $text: light);
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // --------------
+
+  // --------------
+  // @each $key, $value in $colors {
+  //   &-#{"" + $key} {
+  //     @include bg-($value);
+  //   }
+  // }
+
+  &-none,
+  &-0 {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buildHtml": "parcel build projects/theme_blank/index.html -d projects/theme_blank/dist",
+    "devHtml": "parcel  projects/theme_blank/index.html -d projects/theme_blank/dist",
+    "dev": "parcel projects/theme_blank/pug/index.pug -d projects/theme_blank/dist",
+    "devAll": "parcel projects/theme_blank/pug/*.pug -d projects/theme_blank/dist",
+    "build": "parcel build --no-source-maps projects/theme_blank/pug/*.pug -d projects/theme_blank/dist",
+    "buildin": "parcel build --no-source-maps projects/theme_blank/pug/index.pug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@vue/component-compiler-utils": "^3.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "posthtml-img-autosize": "^0.1.6",
+    "posthtml-modules": "^0.7.4",
+    "pug": "^3.0.2",
+    "sass": "^1.35.1",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "dependencies": {
+    "@pixi/graphics-extras": "^6.0.4",
+    "gsap": "^3.7.0",
+    "pixi.js": "^6.0.4",
+    "vue": "^2.6.14",
+    "vue-hot-reload-api": "^2.3.4"
+  }
+}

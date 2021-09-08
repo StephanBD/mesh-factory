@@ -1,0 +1,78 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	include layout/_navbar.pug
+
+	main.content-m.my-5.flex.gap
+		article.flex-auto.px-sm
+			h1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, soluta!
+			p.t-gray Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto facilis dolore, nobis voluptatem reiciendis explicabo praesentium numquam iusto neque fugit! Vero, dolor atque. At doloremque similique neque omnis fuga.
+			.flex.ai-center.t-small.mb
+				div
+					+img(50)
+					span.ml por 
+					a.a mamela fillo flor 
+				p.mb-0.flex-6 30 julio 2021 en Estados Unidos, Noticias, Política
+			.flex.mb.gap-row
+				.py.flex-auto.t-center.t-small.round.bg-blue.t-light 
+					<i class="fab fa-facebook-f"></i>
+					span.ml(class="md:show") facebook 
+				.py.flex-auto.t-center.t-small.round.bg-info.t-light 
+					<i class="fab fa-twitter"></i>
+					span.ml(class="md:show") twitter 
+				.py.flex-auto.t-center.t-small.round.bg-green.t-light 
+					<i class="fab fa-whatsapp"></i>
+					span.ml(class="md:show") whatsapp 
+				.py.flex-auto.t-center.t-small.round.bg-red.t-light 
+					<i class="fab fa-youtube"></i>
+					span.ml(class="md:show") youtube 
+
+
+			//- +img("700x500")
+			+figure("700x500")
+				|  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores.
+			//- p.t-center.t-gray Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe!
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio #[a.a dolore laboriosam. Natus eligendi quod dignissimos iure!]
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio dolore laboriosam. Natus eligendi quod dignissimos iure!
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio dolore laboriosam. Natus eligendi quod dignissimos iure!
+			h2 Lorem ipsum dolor, sit amet consectetur adipisicing.
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio dolore laboriosam. Natus eligendi quod dignissimos iure!
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio dolore laboriosam. Natus eligendi quod dignissimos iure!
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio dolore laboriosam. Natus eligendi quod dignissimos iure!
+			h3 Lorem ipsum dolor, sit amet consectetur adipisicing.
+			p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et nam minus autem laborum facere. Fugit pariatur dicta beatae expedita suscipit velit ducimus quidem officiis exercitationem dolor neque, libero odit, eaque non recusandae optio dolore laboriosam. Natus eligendi quod dignissimos iure!
+			.flex.t-small.ai-center
+				span tags: 
+				a.a.btn Lorem
+				a.a.btn Lorem
+				a.a.btn Lorem
+				a.a.btn Lorem
+				a.a.btn Lorem
+			.flex.nowrap.my-sm.ai-center
+				+img(100)
+				div.mx
+					span: a.bold.t-big John Doe 
+					p.t-gray Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, officiis.
+		aside.flex-4(class="md:show")
+			h3 Lorem ipsum dolor sit amet.
+			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sint veritatis cupiditate magni facere nisi impedit ad alias soluta maiores aperiam iste esse incidunt dolorem magnam ullam, dicta nostrum facilis?
+			p.bold.t-center Newsletter
+			input(type="text" placeholder="Email").b.btn.round
+			button.bg-gray.round.btn-center.btn-xl.t-light.bold Subscribe
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

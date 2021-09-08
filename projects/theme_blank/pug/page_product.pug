@@ -1,0 +1,52 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	include layout/_navbar.pug
+
+	.content-m.gap-col.px-md.my-md
+		article(class="md:flex").gap.ai-center
+			.img(class="md:flex-6").p-xl
+				+img(500)
+				div.t-3.flex.ai-center.jc-flex-end.gap-row
+					span &#8592;
+					span 2/3
+					span &#8594;
+					strong.t-underline.t-normal details
+			.body(class="md:flex-6").t-center.flex-col.ai-center.p-sm
+				h1 Lorem ipsum dolor sit amet.
+				p 
+					strong by 
+					span Lorem ipsum dolor sit.
+				h2 
+					span.t-small $
+					span 7999
+
+				p.t-gray Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, sapiente facilis dignissimos accusamus cum velit, non eos aut laudantium labore deserunt quo cumque minus obcaecati voluptate id quasi soluta vel!
+				p.t-uppercase chose your colors 
+				.flex.w-300-max.mx-a
+					.box-3.round-circle.bg-green-dark
+					.box-3.round-circle.bg-red-dark
+					.box-3.round-circle.bg-yellow-dark
+					.box-3.round-circle.bg-blue-dark
+				p.t-uppercase Quatity 
+				input(type="number", name="" value="1").w-100-max.t-center
+				.btn-xl.bg-dark.t-light.t-uppercase.round-4.px-2 add to bag
+
+
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

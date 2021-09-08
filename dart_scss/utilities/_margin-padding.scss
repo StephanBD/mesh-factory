@@ -1,0 +1,188 @@
+//-----------------------------------------------------//
+@mixin marginData($mop, $direccion) {
+  @each $dir in $direccion {
+    #{$mop}-#{$dir}: $margin;
+  }
+
+  @for $value from 2 through 10 {
+    &-#{ $value} {
+      @each $dir in $direccion {
+        #{$mop}-#{$dir}: $margin * $value;
+      }
+    }
+  }
+}
+
+//-------------------margin----------------------------------//
+
+.m {
+  @include breakpointMaker(true) {
+    margin: $margin;
+    @include increase(margin, $margin, 0);
+    &-a {
+      margin: auto;
+    }
+    &x-a {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &y-a {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    @each $dir, $short in $directions {
+      &#{$short} {
+        margin-#{$dir}: $margin;
+        @include increase(margin-#{$dir}, $margin, 0);
+        &-a {
+          margin-#{$dir}: auto;
+        }
+      }
+    }
+
+    &x {
+      @include marginData("margin", $x);
+    }
+
+    &y {
+      @include marginData("margin", $y);
+    }
+
+    //-----------------------------------------------------//
+    &-0 {
+      @include erasebreakpoints(margin, none);
+    }
+  }
+}
+//==========================padding==========================//
+.p {
+  @include breakpointMaker(true) {
+    padding: $padding;
+    @include increase(padding, $padding, 0);
+    &-a {
+      padding: auto;
+    }
+    &x-a {
+      padding-left: auto;
+      padding-right: auto;
+    }
+    &y-a {
+      padding-top: auto;
+      padding-bottom: auto;
+    }
+
+    @each $dir, $short in $directions {
+      &#{$short} {
+        padding-#{$dir}: $padding;
+        @include increase(padding-#{$dir}, $padding, 0);
+        &-auto {
+          padding-#{$dir}: auto;
+        }
+      }
+    }
+
+    &x {
+      @include marginData("padding", $x);
+    }
+
+    &y {
+      @include marginData("padding", $y);
+    }
+    //-----------------------------------------------------//
+    &-0 {
+      @include erasebreakpoints(padding, none);
+    }
+  }
+}
+
+.m {
+  $num: 1;
+  @each $key, $value in $breakpoints {
+    @include prop-size(-#{$key}, margin Div($margin, $num));
+    @include prop-size(l-#{$key}, margin-left $margin * $num);
+    @include prop-size(r-#{$key}, margin-right $margin * $num);
+    @include prop-size(t-#{$key}, margin-top $margin * $num);
+    @include prop-size(b-#{$key}, margin-bottom $margin * $num);
+
+    @include prop-size(
+      x-#{$key},
+      margin-right $margin * $num,
+      margin-left $margin * $num
+    );
+    @include prop-size(
+      y-#{$key},
+      margin-bottom $margin * $num,
+      margin-top $margin * $num
+    );
+    $num: $num + 1;
+  }
+
+  $num: 2;
+  @include from($sm) {
+    @each $key, $value in $breakpoints {
+      @include prop-size(-#{$key}, margin $margin * $num);
+      @include prop-size(l-#{$key}, margin-left $margin * $num);
+      @include prop-size(r-#{$key}, margin-right $margin * $num);
+      @include prop-size(t-#{$key}, margin-top $margin * $num);
+      @include prop-size(b-#{$key}, margin-bottom $margin * $num);
+
+      @include prop-size(
+        x-#{$key},
+        margin-right $margin * $num,
+        margin-left $margin * $num
+      );
+      @include prop-size(
+        y-#{$key},
+        margin-bottom $margin * $num,
+        margin-top $margin * $num
+      );
+      $num: $num + 1;
+    }
+  }
+}
+.p {
+  $num: 1;
+  @each $key, $value in $breakpoints {
+    @include prop-size(-#{$key}, padding $padding * $num);
+    @include prop-size(l-#{$key}, padding-left $padding * $num);
+    @include prop-size(r-#{$key}, padding-right $padding * $num);
+    @include prop-size(t-#{$key}, padding-top $padding * $num);
+    @include prop-size(b-#{$key}, padding-bottom $padding * $num);
+
+    @include prop-size(
+      x-#{$key},
+      padding-right $padding * $num,
+      padding-left $padding * $num
+    );
+    @include prop-size(
+      y-#{$key},
+      padding-bottom $padding * $num,
+      padding-top $padding * $num
+    );
+    $num: $num + 1;
+  }
+
+  $num: 2;
+  @include from($sm) {
+    @each $key, $value in $breakpoints {
+      @include prop-size(-#{$key}, padding $padding * $num);
+      @include prop-size(l-#{$key}, padding-left $padding * $num);
+      @include prop-size(r-#{$key}, padding-right $padding * $num);
+      @include prop-size(t-#{$key}, padding-top $padding * $num);
+      @include prop-size(b-#{$key}, padding-bottom $padding * $num);
+
+      @include prop-size(
+        x-#{$key},
+        padding-right $padding * $num,
+        padding-left $padding * $num
+      );
+      @include prop-size(
+        y-#{$key},
+        padding-bottom $padding * $num,
+        padding-top $padding * $num
+      );
+      $num: $num + 1;
+    }
+  }
+}

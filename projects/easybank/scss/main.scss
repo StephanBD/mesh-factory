@@ -1,0 +1,201 @@
+@use "sass:math";
+@import "0_reset/minireset.scss";
+
+// @import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+@import "variables.scss";
+// //==========================================================*/
+@import "settings";
+@import "layout";
+@import "components";
+// @import "utilities";
+// ------------------------
+// @import "utilities/border";
+@import "utilities/margin-padding";
+// @import "utilities/utilities";
+// @import "utilities/filter";
+// @import "utilities/images";
+// @import "utilities/modal";
+// @import "utilities/shadow";
+// @import "utilities/shapes";
+// @import "utilities/transform";
+@import "utilities/width-height";
+@import "utilities/background-colors";
+@import "utilities/typography";
+// @import "utilities/alignment";
+
+// ------------------------
+@import "debug";
+
+.services {
+  // display: flex;
+  // direction: ;
+  @include flex-dcia(row, center);
+  margin-top: $margin * 3;
+  @include from() {
+    justify-content: space-between;
+  }
+  & > div {
+    flex: 1;
+    // flex-basis: 100%;
+    // min-width: 240px;
+    // max-width: 340px;
+    // margin-: 5px;
+    @include mx-(5px);
+    flex: 200px;
+    flex-grow: 0;
+  }
+}
+
+.btn {
+  &-invite {
+    padding: 8px $padding;
+    font-size: 1.5rem;
+    // margin-left: auto;
+    background: GradientLinear(0deg, $primary, $secondary);
+    @include t-(light);
+    border-radius: $border-radius * 3;
+  }
+}
+
+footer {
+  @include bg-(tertiary);
+  @include mt-($margin * 4);
+  // @include py-($padding * 2);
+
+  & .content-m {
+    @include flex-dcia(row);
+
+    @include px-($padding);
+    & > * {
+      // @include my-($padding * 2);
+      @include mx-(10px);
+      flex: 1;
+      // flex-basis: 100%;
+      // max-width: 200px;
+      min-width: 200px;
+    }
+  }
+}
+.flex-col {
+  > * {
+    @include my-(5px);
+  }
+}
+.social-list {
+  @include flex-dcia(row, $flex-wrap: nowrap);
+}
+
+.navbar-sm {
+  @include pt-($padding);
+}
+.navbar-list {
+  color: $gray;
+  display: flex;
+  flex-direction: column;
+  @include py-($padding);
+  @include from($md) {
+    @include py-(0);
+    //  display: flex;
+    flex-direction: row;
+  }
+}
+
+p {
+  color: $gray;
+}
+
+.card {
+  &-body {
+    @include px-($padding);
+  }
+  &-img {
+    @include mb-($padding);
+  }
+}
+
+.title {
+  margin-bottom: $margin * 2;
+  color: Color(terciary);
+  @include prop(font-size 4rem, font-weight bold);
+  &-big {
+    color: Color(terciary);
+    @include prop(font-size 4rem, font-weight bold);
+    @include from($sm) {
+      @include prop(font-size 7rem);
+    }
+  }
+}
+
+.section {
+  @include py-($padding * 4);
+  @include px-($padding);
+  @include from() {
+    @include py-($padding * 9);
+  }
+}
+
+.hero {
+  // @include grid-crjaj(1fr , $justify-content: center, $align-items: center);
+  @include grid-crjaj(1fr, $justify-content: center, $align-items: center);
+  position: relative;
+  height: 700px;
+  @include from() {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-space {
+    height: 400px;
+    order: -1;
+    @include from() {
+      order: 1;
+    }
+  }
+
+  &-bg-1 {
+    pointer-events: none;
+    position: absolute;
+    // width: 100%;
+    // height: 100%;
+    top: 0;
+    // left: 0;
+    right: 0;
+    // bottom: 0;
+    z-index: -1;
+    // object-fit: cover;
+    height: 60%;
+    @include from() {
+      height: 70%;
+      right: -50px;
+    }
+  }
+  &-bg {
+    //  @include img-container();
+    overflow: hidden;
+    position: relative;
+    z-index: $z-normal_1;
+    z-index: var(--z-normal);
+    position: relative;
+  }
+}
+.realservices {
+  @include mb-($margin * 2);
+}
+@include to($sm) {
+  %text-center {
+    text-align: center;
+  }
+  .title {
+    @extend %text-center;
+    &-big {
+      @extend %text-center;
+    }
+  }
+  .flex-col,
+  .realservices,
+  .w-500-max,
+  .hero {
+    @extend %text-center;
+  }
+}

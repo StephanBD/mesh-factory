@@ -1,0 +1,295 @@
+@use "sass:math";
+// @import "0_reset/minireset.scss";
+
+// @import "defaultVariables.scss";
+
+// //==========================custome variables==========================*/
+@import "variables.scss";
+// //==========================================================*/
+// @import "settings";
+// @import "layout";
+// @import "components";
+// @import "utilities";
+// ------------------------
+@import "settings/maps";
+@import "settings/functions";
+@import "settings/mixins";
+// @import "components/_flipcard";
+
+// @import "settings/base";
+// @import "settings/forms";
+// @import "settings/dark-mode";
+// @import "settings/buttons";
+// @import "settings/toggles";
+// ------------------------
+// @import "debug";
+
+//-----------------------------------------------------//
+
+#{$thisName} {
+  @include card();
+  font-size: 16px;
+  max-width: Em(500px);
+  max-height: Em(ruleofthree(100, 500, 57) * 1px);
+  max-height: Em(600px);
+  color: Color(light);
+  // @include to($globalBP) {
+  //   max-height: Em(350px);
+  // }
+  // -------------------
+  &-flip {
+    @include flip_h();
+    height: 100%;
+  }
+  // -------------------
+  // background: $black;
+  border: 1px solid white;
+  padding: $padding * 1.5;
+  @include to(300px) {
+    padding: 0.3em;
+  }
+  border-radius: 2em;
+  background: radial-gradient(
+      49% 52% at 12.5% 40%,
+      rgba(58, 210, 221, 1) 0%,
+      rgba(58, 210, 221, 0) 40%
+    ),
+    radial-gradient(
+      79% 83% at 88.5% 17.5%,
+      rgba(58, 210, 221, 1) 0%,
+      rgba(58, 210, 221, 0) 41%
+    ),
+    radial-gradient(
+      40% 40% at 67% 98%,
+      rgba(58, 210, 221, 1) 0%,
+      rgba(58, 210, 221, 0) 41%
+    ),
+    radial-gradient(
+      86% 34% at 69% 70%,
+      rgba(58, 210, 221, 1) 0%,
+      rgba(58, 210, 221, 0) 41%
+    ),
+    radial-gradient(
+      91% 79% at 53.5% 54.5%,
+      rgba(32, 39, 49, 1) 0%,
+      rgba(14, 17, 22, 1) 91%
+    );
+
+  &-body,
+  &-body-front,
+  &-body-back {
+    @include body();
+    @include p-(Em($padding));
+    // box-shadow: 0px 5px 9px rgb(0 0 0 / 50%);
+    border-radius: 1.5em;
+  }
+
+  &-body {
+    &-front {
+      @include front();
+      background: rgba(14, 17, 22, 1);
+      // border: 1px solid white;
+
+      // border-bottom-left-radius: 2em;
+      // border-top-right-radius: 2em;
+      height: 100%;
+    }
+    // &-back {
+    //   @include back();
+    //   // align-content: center;
+    //   // align-items: center;
+    //   // justify-content: center;
+    //   // flex-direction: row;
+    //   // flex-wrap: wrap;
+    //   background: rgb(57, 57, 68);
+    //   background: radial-gradient(
+    //     circle,
+    //     rgba(57, 57, 68, 1) 0%,
+    //     rgba(27, 29, 36, 1) 100%
+    //   );
+    //   // border-top-left-radius: 2em;
+    //   // border-bottom-right-radius: 2em;
+    // }
+  }
+  // -------------------
+  &-centered {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &-mx {
+    @include mx-(auto);
+  }
+  &-row {
+    @include flex-dcia(row, flex-start);
+
+    &-icon {
+      @include box-em(2em);
+      background: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+      margin-right: 1em;
+      border-radius: 0.3em;
+      > svg {
+        height: 1.5em;
+      }
+      &-logo {
+        margin-left: auto;
+        height: 1.5em;
+      }
+    }
+  }
+
+  // ---------------------------
+
+  &-heading {
+    font-size: 2em;
+    font-weight: 700;
+  }
+  &-subtitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  &-total {
+    font-size: 2.3em;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  &-heading,
+  &-subtitle {
+    // @include to($globalBP) {
+    //   text-align: center;
+    // }
+    // @at-root #{$thisName}-body-back & {
+    //   @include mx-(auto);
+    // }
+  }
+  &-list {
+    // margin-top: Em(50px);
+    // margin-top: auto;
+    // @include gap-col(8px);
+    width: 100%;
+  }
+  &-contact {
+    margin-top: Em(8px);
+    margin-bottom: Em(8px);
+    font-size: 1em;
+    position: relative;
+    // width: 50%;
+    max-width: 80%;
+    width: 13em;
+
+    @include flex-dcia(
+      column,
+      // $align-items: center,
+        $justify-content: flex-start,
+      $flex-wrap: nowrap
+    );
+
+    &-info {
+      margin-left: Em(8 + 32px);
+      font-size: 1em;
+      height: min-content;
+      line-height: 1.1;
+    }
+    &-icon {
+      // @include box-px(32px, 24px, 32px);
+      @include box-em(2em);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background: Color(red);
+      position: absolute;
+      left: 0;
+      & > svg {
+        height: 1em;
+        width: 1em;
+      }
+    }
+  }
+  &-progress {
+    height: 0.2em;
+    width: 100%;
+    background: $gray-dark;
+    &-fill {
+      height: inherit;
+      background: $white;
+      width: 50%;
+    }
+    &-count {
+      position: absolute;
+      bottom: 0;
+      left: 105%;
+      line-height: 1;
+      font-size: 1.3em;
+      font-weight: 700;
+    }
+  }
+  &-header {
+    @include flex-dcia(row, $align-items: center);
+    width: 100%;
+    margin-bottom: auto;
+  }
+  &-brand {
+    // position: absolute;
+    // width: 100px;
+    // right: Em($padding);
+    // top: Em($padding);
+    // margin-bottom: Em($padding);
+    height: Em(60px);
+    // @include mx-(auto);
+    // display: block;
+    // @include to($globalBP) {
+    //   order: -1;
+    //   position: static;
+    //   // width: auto;
+    // }
+    // &-back {
+    //   min-width: Em(100px);
+    //   width: Em(100px);
+    //   @include mx-(auto);
+    // }
+  }
+  // -----------------------------
+  &-bg {
+    &-front {
+      position: absolute;
+      //  @include fullWH();
+      top: 6em;
+      right: -5em;
+      width: 25em;
+      height: 25em;
+      // background: blue;
+      z-index: -2;
+      border-radius: 50%;
+      background: red;
+      transition: transform 2s;
+      // @at-root #{$thisName}:hover & {
+      //   transform: scale(1.5);
+      // }
+      border: 1em solid $cyan;
+      background-image: url(https://i0.wp.com/newdoorfiji.com/wp-content/uploads/2018/03/profile-img-1.jpg?ssl=1);
+      background-repeat: none;
+      background-size: cover;
+      transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      @at-root #{$thisName}:hover & {
+        transform: scale(1.2);
+      }
+    }
+    &-shadow {
+      z-index: -1;
+      background: red;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(194deg, rgba(15, 18, 23, 0) 0%, #0f1217 77%);
+    }
+  }
+}

@@ -1,0 +1,367 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	//- include layout/_seo.html
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+
+//--------------------------------------
+
+block content
+	include layout/_navbar.pug
+
+	.content-m.px-md
+		h1 basic html style
+		h2.bold Tags
+
+		h1 h1 
+		h2 h2 
+		h3 h3 
+		h4 h4 
+		h5 h5 
+		h6 h6 
+		//- ---------------------------
+		hr 
+		h2.bold Classes
+		+class("h1")(class="h1")
+		+class("h2")(class="h2")
+		+class("h3")(class="h3")
+		+class("h4")(class="h4")
+		+class("h5")(class="h5")
+		+class("h6")(class="h6")
+
+		//- ---------------------------
+		hr 
+		h2.bold text custome sizes
+		each val in ["small", "normal", "big", "huge"]
+			+class("t-" + val)(class="t-" + val)
+			//- h6(class="t-" + val)= "t-" + val
+		//- ---------------------------
+		hr
+		h2.bold text sizes
+		each val in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+			+class("t-" + val)(class="t-" + val)
+			//- h6(class="t-" + val)= "t-" + val
+
+		//- ---------------------------
+		hr
+		h2.bold Paragraph
+		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla dignissimos deleniti fugiat minus vitae, quod voluptatibus dolorem est repudiandae ullam optio facilis corrupti facere earum vero fugit veniam minima incidunt.
+		p
+			strong strong - strong
+		p
+			b bold - b
+		p
+			i italic - i
+		p
+			em emphasis - em
+		p
+			small small - small
+		p
+			cite cite - cite
+		p h
+			sub 2
+			| o - sub
+		p 3
+			sup 2 
+			| - sup
+		p
+			a(href="#") link
+		p
+			a(href="").a 
+				+class("a")
+
+		details
+			summary summary
+			p lorem
+			p lorem
+			p lorem
+		//- ---------------------------
+		hr
+		h2.bold Lists
+		ol 
+			li ol item 
+			li 
+				li Nested list item
+			ul 
+				li  Nested list item					
+		ul 
+			li ul item
+			li 
+				li Nested list item			
+			ul 
+				li  Nested list item
+		//- ---------------------------
+		hr
+		h2.bold code
+		p.bold pre
+		pre 
+			|Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, explicabo quibusdam. Impedit explicabo perferendis iusto molestias repudiandae corporis possimus.
+		p.bold pre p 
+		pre
+			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, explicabo quibusdam. Impedit explicabo perferendis iusto molestias repudiandae corporis possimus.
+		p.bold code
+		code Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, explicabo quibusdam. Impedit explicabo perferendis iusto molestias repudiandae corporis possimus.
+		p.bold code p
+		code 
+			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, explicabo quibusdam. Impedit explicabo perferendis iusto molestias repudiandae corporis possimus.
+
+		p.bold blockquote
+		blockquote Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, explicabo quibusdam. Impedit explicabo perferendis iusto molestias repudiandae corporis possimus.
+		p.bold q
+		q Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, explicabo quibusdam. Impedit explicabo perferendis iusto molestias repudiandae corporis possimus.
+		//- ---------------------------
+		hr
+		h2.bold colors
+		each color in colors
+			.box-4(class="bg-" + color) 
+			+class(`bg-${color}`)
+
+
+		//- ---------------------------
+		hr
+		h2.bold round
+		//- p 
+		//- 	.box-4.mt.bg-black 
+		p 
+			.box-4.mt.round.bg-black 
+			+class("round")
+		p 
+			.box-4.mt.round-2.bg-black 
+			+class("round-2")
+		p
+			.box-4.mt.round-3.bg-black 
+			+class("round-3")
+		p
+			.box-4.mt.round-top.bg-black 
+			+class("round-top")
+		p
+			.box-4.mt.round-bottom.bg-black 
+			+class("round-bottom")
+		p
+			.box-4.mt.round-left.bg-black 
+			+class("round-left")
+		p
+			.box-4.mt.round-right.bg-black 
+			+class("round-right")
+		p
+			.box-4.mt.round-circle.bg-black 
+			+class("round-circle")
+		//- p
+		//-   .parallelogram.w-100.h-100.bg-black
+		//-   | parallelogram
+
+
+		//- ---------------------------
+		hr
+		h2.bold Images
+		figure( class="figure")
+			img(src="https://via.placeholder.com/150")
+			figcaption figure & figcaption
+
+		h3 tag image as background
+		p img-container > img
+		.img-container.w-200.h-150
+			img(src="https://imgcomfort.com/Userfiles/Upload/images/illustration-geiranger.jpg" )
+
+		h3 background image from variable
+		p img-var
+		p style="--url: url(https://image.jpg)"
+		div(style="--url: url(https://imgcomfort.com/Userfiles/Upload/images/illustration-geiranger.jpg)").img-var.w-200.h-150
+		//- ---------------------------
+		hr
+		h2.bold Table
+		div( class="overflow-x")
+			table
+				caption caption
+				thead
+					tr
+						th thead 
+						th thead 
+						th thead 
+						th thead 
+					tr
+						td td 
+						td td 
+						td td 
+						td td 
+				tbody
+					tr
+						th tbody
+						th tbody 
+						th tbody 
+						th tbody 
+					tr
+						td td 
+						td td 
+						td td 
+						td td 
+					tr
+						td td 
+						td td 
+						td td 
+						td td 
+				tfoot 
+					tr
+						th tfoot 
+						td td 
+						td td 
+						td td 
+					tr
+						th tfoot 
+						td td  
+						td td  
+						td td  
+		//- ---------------------------
+		//- hr
+		//- h2.bold Cards
+		//- .grid.gap-1(class="sm:col-3").col-3
+			.card
+				+img(500)
+				p header
+				p body
+				p footer		
+			.card-info
+				+img(500)
+				p header
+				p body
+				p footer		
+			.card.shadow
+				p.head card 
+				p.body body
+				p.footer footer
+			.card-column.shadow
+				p.head card-column
+				p.body   height		 
+			.card.bg-info.round-3
+				+img("500x300")
+				p.head header
+				p.body.p round-3
+			.card.shadow.p
+				+img(500)
+				p.head header
+				p.body body
+				p.footer footer
+		//- ----------------		h3.bold card-row
+		//- .flex-col.gap-col-2.my-2
+			pre 
+				|.card-row
+				|   .card-img
+				|		 img
+				|   .card-body
+				|		 p
+			.card-row
+				.card-img
+					+img("100")
+				.card-body 
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+			.card-row
+				.card-img
+					+img("100")
+				.card-body.ml 
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+			.card-row(class="sm:pl-8")
+				.card-img
+					+img("100")
+				.card-body.ml-2
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+
+		//- h3.bold card-float
+		//- .flex-col.gap-col-2.my-2
+			pre 
+				|.card-float-l (.card-float-r)
+				|   .card-img
+				|		 img
+				|   .card-body
+				|		 p
+			.card-float
+				.card-img.w-10.img-container.h-10
+					+img("100")
+				.card-body
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+			.card-float
+				.card-img
+					+img("100")
+				.card-body.mr
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+			.card-float-r
+				.card-img.mr-2
+					+img("100")
+				.card-body
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+			.card-float-l
+				.card-img.mr-3
+					+img("100")
+				.card-body 
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur illum repellat fugiat delectus reprehenderit quaerat, eveniet rerum facilis sapiente nihil ipsam eum exercitationem ipsum! Expedita est aut animi omnis?
+		//- ---------------------------
+		hr
+		h2.bold Shadows
+		.box-4.m.bg-gray-light.shadow-none 
+		p no shadow		 
+		p.bold outside shadow		 
+		.box-4.m.bg-gray-light.b-1.b-light.shadow
+		+class("shadow")
+		.box-4.m.bg-gray-light.b-1.b-light.shadow-sm
+		+class("shadow-sm")
+		.box-4.m.bg-gray-light.b-1.b-light.shadow-lg
+		+class("shadow-lg")
+		.box-4.m.bg-gray-light.b-1.b-light.shadow-left
+		+class("shadow-left")
+		.box-4.m.bg-gray-light.b-1.b-light.shadow-top
+		+class("shadow-top")
+		.box-4.m.bg-gray-light.b-1.b-light.shadow-right
+		+class("shadow-right")
+		.box-4.m.bg-gray-light.b-1.b-light.shadow-bottom
+		+class("shadow-bottom")
+		p.bold inner shadow 
+		.box-4.m.bg-gray-light.shadow-in
+		+class("shadow-in")
+		.box-4.m.bg-gray-light.shadow-in-top
+		+class("shadow-top")
+		.box-4.m.bg-gray-light.shadow-in-left
+		+class("shadow-left")
+		.box-4.m.bg-gray-light.shadow-in-bottom
+		+class("shadow-bottom")
+		.box-4.m.bg-gray-light.shadow-in-right
+		+class("shadow-right")
+		p.bold text shadow 
+		p.t-9.shadow-t.bold lorem
+		+class("shadow-t")
+
+		//- ---------------------------
+		//- hr
+		//- h2.bold progress bar tag
+		//- progress()
+		//- progress(value="70" max="100") 70
+		//- //- ---------------------------				//- progress(value="100" max="100")
+		//- hr
+		//- h2.bold custome progress bar 
+		//- .gap-col
+		//- 	.bg-gray-light.h-2
+		//- 		| 0%
+		//- 		div(class="") 
+		//- 	.bg-gray-light.h-2
+		//- 		div(class="bg-info w-70% h-2  d-inline-block") 
+		//- 		span 70%
+		//- 	.bg-gray-light.h-2
+		//- 		div(class="bg-info w-100% h-2 ") 100%
+		//- 	.progress.bg-primary-t
+		//- 		div(class="bg-info w-100% ") 70%
+		//- 		span 70%
+		//- p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore eveniet expedita dolorum enim libero ut distinctio molestiae, illum esse hic iure repellat deserunt vero nulla earum cum pariatur quia laboriosam!
+
+
+
+//--------------------------------------
+block foot
+	//- include layout/_footer.pug
+
+//--------------------------------------
+block scripts
+	script(src="../js/app.js")

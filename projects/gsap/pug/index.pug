@@ -1,0 +1,126 @@
+extends layout/_layout.pug
+//-=====================================
+
+
+block head
+	- var title = 'title'
+	include layout/_head.pug
+	link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css") 
+//--------------------------------------
+
+block content 
+	//---------------- 
+	//- main.gap-col-2.absolute.top.center(role="main" tabindex="-1") 
+	//- 	.box-4.bg-black.cuadrado_1 
+	//- 	.box-4.bg-yellow.cuadrado_2 
+	//- 	.box-4.bg-green.cuadrado_3 
+	//- 	.box-4.bg-blue.cuadrado_4
+	
+	//- .contenedor 
+	//- 	h1 ScrollTrigger
+	//- 	.contenedor__animacion
+	//- 		img(src="img/decoration1.png", alt="").nave
+	//- 		img(src="img/jupiter.svg", alt="").planeta.planeta1
+	//- 		img(src="img/jupiter.svg", alt="").planeta.planeta2
+	//- 		img(src="img/jupiter.svg", alt="").planeta.planeta3
+	//- 		img(src="img/jupiter.svg", alt="").planeta.planeta4
+	//- 		img(src="img/jupiter.svg", alt="").planeta.planeta5
+
+	//- .contenedor 
+	//- 	section.contenedor_titulo 
+	//- 		h1.t-20 animation with scroll 
+	//- 	section.contenedor_images 
+	//- 		img(src="img/jupiter.svg", alt="").carro1
+	//- 		img(src="img/jupiter.svg", alt="").carro2
+	//--------------------------------------
+	//- .text.my-2
+	//- 	h1.bold.t-5
+	//- 		span.hidetext toni&guy
+	//- 	h2 duality 
+	//- 	h3 
+	//- 		span.hidetext collection 2017 <br> duality
+	//- 	p 
+	//- 		span.hidetext Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero iure, harum dolores amet quis nisi architecto deserunt aperiam modi. Facilis modi laborum officiis quod ratione doloribus expedita. Quisquam, magnam vitae.
+		
+	//- .sponsor 
+	//- 	img(src="img/sponsor-logo.png", alt="")
+	
+	//- .distortion.w-600.h-700
+
+	//- .content-m 
+	//- 	button(class="h-10 w-10 bg-green play cursor-pointer")
+	//- 	.flex
+	//- 		div(class="h-10 w-10 bg-red ball mr round-circle")
+	//- 		div(class="h-10 w-10 bg-red ball mr round-circle")
+	//- 		div(class="h-10 w-10 bg-red ball mr round-circle")
+	//- 		div(class="h-10 w-10 bg-red ball mr round-circle")
+	//- 		div(class="h-10 w-10 bg-red ball mr round-circle")
+
+	//- section.py-xl.px-xl.img-container 
+	//- 	img(src="../../img/house.jpg", alt="")
+	//- 	p.blur-4-bg.p-6.t-light.b-2.b-gray.round-2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta suscipit assumenda tempora quae possimus delectus quam quas minus hic repudiandae consectetur iste provident sunt quos numquam minima, reprehenderit dolorum dolores?
+		
+	//- section.py-xl.px-xl
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	+img(500)
+	//- section.py-xl.px-xl
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	+img(500)
+	//- section.py-xl.px-xl.bg-red-light
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	+img(500)(id="enter" class="sticky bottom left")
+	//- section.py-xl.px-xl
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quis hic sunt! Mollitia architecto eveniet, facere fuga unde laboriosam laudantium tempore voluptatem repudiandae provident, aut esse quas harum cum vero.
+	//- 	+img(500)
+	//- ----------------------------
+	//- section.py-10.px-1
+	//- 	div.img-container.my-10.h-500.sticky.center.enter-anim: +img(100)
+	//- 	div.img-container.my-10.h-500.sticky.center.enter-anim: +img(200)
+	//- 	div.img-container.my-10.h-500.sticky.center.enter-anim: +img(300)
+	//- 	div.img-container.my-10.h-500.sticky.center.enter-anim: +img(500)
+	//- section.py-10 
+	//- section.py-10 
+	//- section.py-10 
+	//- ----------------------------
+	//- section.py-10.bg-gray-light.h-1200.img-container 
+	//- 	+img(500)
+
+
+	//- .modal-bg.flex.ai-center.jc-center#modal(class="scale-1.0").hide.origin-bottom-right
+	//- 	.box-4.bg-blue#close-modal
+	//- .menu.box-3.bg-green.fixed.bottom.right#btn-modal.z-modal
+
+	//- .menu.box-3.bg-red.fixed.bottom.left#btn-modal2.z-modal
+	//- .new-modal#modal2.flex.ai-center.jc-center.hide
+	//- 	#modal-content.content.bg-pink
+	//- 		.box-4.bg-orange#close-modal2
+	//--------------------------------------
+	section.section
+		h2#text Mountains
+		img(src="../img/bg.jpg", alt="" id="bg")
+		img(src="../img/man.png", alt="" id="man")
+		img(src="../img/clouds_1.png", alt="" id="clouds_1")
+		img(src="../img/clouds_2.png", alt="" id="clouds_2")
+		img(src="../img/mountain_left.png", alt="" id="mountain_left")
+		img(src="../img/mountain_right.png", alt="" id="mountain_right")
+	.sec.container-m.p-3
+		h2.bold.t-4.mb-2 scrolltrigger is awesome
+		p Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolor amet. Maiores tenetur ducimus officiis mollitia expedita optio exercitationem recusandae voluptatem, ipsum accusantium in ab illo repellendus minus culpa rem provident quis molestiae quibusdam, itaque, quidem neque. Ipsa facilis corporis, blanditiis sed enim minus doloremque provident incidunt iusto atque, eligendi esse molestiae quisquam exercitationem neque asperiores? Non, in! Consectetur natus, nulla eos facere eligendi possimus distinctio soluta dicta. Dignissimos atque vero consectetur? Repellendus natus architecto debitis. Doloremque odio voluptate, nam cumque praesentium eos adipisci unde magnam qui nostrum, amet possimus provident neque, corporis labore tempora saepe quidem laborum cupiditate dolor.
+		p Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolor amet. Maiores tenetur ducimus officiis mollitia expedita optio exercitationem recusandae voluptatem, ipsum accusantium in ab illo repellendus minus culpa rem provident quis molestiae quibusdam, itaque, quidem neque. Ipsa facilis corporis, blanditiis sed enim minus doloremque provident incidunt iusto atque, eligendi esse molestiae quisquam exercitationem neque asperiores? Non, in! Consectetur natus, nulla eos facere eligendi possimus distinctio soluta dicta. Dignissimos atque vero consectetur? Repellendus natus architecto debitis. Doloremque odio voluptate, nam cumque praesentium eos adipisci unde magnam qui nostrum, amet possimus provident neque, corporis labore tempora saepe quidem laborum cupiditate dolor.
+		
+
+//--------------------------------------
+block scripts
+	//- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+	//- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+	//- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"></script>
+	//- script(src="js/hover-effect.umd.js")
+	script(src="../js/app.js")  
